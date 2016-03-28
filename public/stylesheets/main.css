@@ -77,8 +77,8 @@ img {
   vertical-align: middle;
 }
 #img-weather{
-  height: 30%;
-  width: 30%;
+  height: auto;
+  width: 71px;
   margin: 0px auto 10px auto;
   display: block;
   float: left;
@@ -1332,9 +1332,8 @@ background: #303030; /* Old browsers */
 }
 #sum_box h4 {
   text-align: center;
-  margin-top: 0px;
   font-size: 30px;
-  margin-bottom: 0px;
+  margin: auto;
   padding-bottom: 0px;
   float: right;
 }

@@ -67,8 +67,8 @@ function getWeather(xml) {
         document.getElementById("img-weather2nd").src = "images/weather/snow.png";
     } else if (idWeather2nd < 800 && idWeather2nd >= 700) {
         document.getElementById("img-weather2nd").src = "images/weather/atmosphere.png";
-    } else if (idWeather2nd = 800) {
-        document.getElementById("img-weather2nd").src = "images/weather/cloud.png";
+    } else if (idWeather2nd == 800) {
+        document.getElementById("img-weather2nd").src = "images/weather/clear.png";
     } else if (idWeather2nd < 900 && idWeather2nd > 800) {
         document.getElementById("img-weather2nd").src = "images/weather/cloud.png";
     } else{
@@ -100,7 +100,7 @@ function getWeather(xml) {
         document.getElementById("img-weather3rd").src = "images/weather/snow.png";
     } else if (idWeather3rd < 800 && idWeather3rd >= 700) {
         document.getElementById("img-weather3rd").src = "images/weather/atmosphere.png";
-    } else if (idWeather3rd = 800) {
+    } else if (idWeather3rd == 800) {
         document.getElementById("img-weather3rd").src = "images/weather/clear.png";
     } else if (idWeather3rd < 900 && idWeather3rd > 800) {
         document.getElementById("img-weather3rd").src = "images/weather/cloud.png";
@@ -133,7 +133,7 @@ function getWeather(xml) {
         document.getElementById("img-weather4th").src = "images/weather/snow.png";
     } else if (idWeather4th < 800 && idWeather4th >= 700) {
         document.getElementById("img-weather4th").src = "images/weather/atmosphere.png";
-    } else if (idWeather4th = 800) {
+    } else if (idWeather4th == 800) {
         document.getElementById("img-weather4th").src = "images/weather/clear.png";
     } else if (idWeather4th < 900 && idWeather4th > 800) {
         document.getElementById("img-weather4th").src = "images/weather/cloud.png";
@@ -166,7 +166,7 @@ function getWeather(xml) {
         document.getElementById("img-weather5th").src = "images/weather/snow.png";
     } else if (idWeather5th < 800 && idWeather5th >= 700) {
         document.getElementById("img-weather5th").src = "images/weather/atmosphere.png";
-    } else if (idWeather5th = 800) {
+    } else if (idWeather5th == 800) {
         document.getElementById("img-weather5th").src = "images/weather/clear.png";
     } else if (idWeather5th < 900 && idWeather5th > 800) {
         document.getElementById("img-weather5th").src = "images/weather/cloud.png";
