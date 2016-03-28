@@ -312,8 +312,8 @@ h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .s
 	font-size: 65%
 }
 h4, .h4, h5, .h5, h6, .h6 {
-	margin-top: 10px;
-	margin-bottom: 10px
+	margin-top: 5px;
+	margin-bottom: 5px
 }
 h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small, h4 .small, .h4 .small, h5 .small, .h5 .small, h6 .small, .h6 .small {
 	font-size: 75%
@@ -335,10 +335,11 @@ h5, .h5 {
 	font-size: 14px
 }
 h6, .h6 {
-	font-size: 12px
+	font-size: 12px;
+	text-align:center;
 }
 p {
-	margin: 0 0 10px
+	margin: 0px
 }
 .lead {
 	margin-bottom: 20px;
@@ -4093,7 +4094,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 .panel {
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 20px;
     /*background-color: #222222;*/
     /* border: 1px solid #1D1E19; */
@@ -4102,7 +4103,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 .panel-body {
-	padding: 10px 15px
+	padding: 10px 15px 15px 15px;
 }
 .panel-heading {
 	padding: 10px 15px;

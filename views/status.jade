@@ -84,7 +84,7 @@ html(lang='en')
               #sum_box.row.mbl
                 .col-sm-6.col-md-3
                   .panel.income.db.mbm
-                    .panel-body
+                    .panel-body(style="width: 80%;margin: 0 auto;")
                       img(src='images/weather/cloud.png' id='img-weather')
                       //- p.icon
                       //-   i.icon.fa.fa-sun-o
@@ -92,7 +92,33 @@ html(lang='en')
                         span#temperatureToday
                         span ℃
                       p.description#weatherToday
-              hr
+                .col-sm-6.col-md-3
+                  .panel.profit.db.mbm
+                    .panel-body(style="width: 25%;margin: 0 auto;float:left;")
+                      img(src='images/weather/cloud.png' id='img-weather2nd')
+                      h6.value
+                        span#temperature2nd
+                        span ℃
+                      p(style="font-size: 12px;text-align: center;")#day2nd
+                    .panel-body(style="width: 25%;margin: 0 auto;float:left;")
+                      img(src='images/weather/cloud.png' id='img-weather3rd')
+                      h6.value
+                        span#temperature3rd
+                        span ℃
+                      p(style="font-size: 12px;text-align: center;")#day3rd
+                    .panel-body(style="width: 25%;margin: 0 auto;float:left;")
+                      img(src='images/weather/cloud.png' id='img-weather4th')
+                      h6.value
+                        span#temperature4th
+                        span ℃
+                      p(style="font-size: 12px;text-align: center;")#day4th
+                    .panel-body(style="width: 25%;margin: 0 auto;float:left;")
+                      img(src='images/weather/cloud.png' id='img-weather5th')
+                      h6.value
+                        span#temperature5th
+                        span ℃
+                      p(style="font-size: 12px;text-align: center;")#day5th
+                hr
               .row.mbl
                 .col-lg-8
                   .panel

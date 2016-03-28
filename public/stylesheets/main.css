@@ -77,11 +77,37 @@ img {
   vertical-align: middle;
 }
 #img-weather{
-  height: 40%;
-  width: 40%;
-  margin: 0px auto 15px auto;
+  height: 30%;
+  width: 30%;
+  margin: 0px auto 10px auto;
+  display: block;
+  float: left;
+}
+#img-weather2nd{
+  height: 22px;
+  width: auto;
+  margin: 0px auto;
   display: block;
 }
+#img-weather3rd{
+  height: 22px;
+  width: auto;
+  margin: 0px auto;
+  display: block;
+}
+#img-weather4th{
+  height: 22px;
+  width: auto;
+  margin: 0px auto;
+  display: block;
+}
+#img-weather5th{
+  height: 22px;
+  width: auto;
+  margin: 0px auto;
+  display: block;
+}
+
 .img-responsive {
   display: block;
   max-width: 100%;
@@ -1310,6 +1336,7 @@ background: #303030; /* Old browsers */
   font-size: 30px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  float: right;
 }
 #sum_box h4 span:last-child {
   font-size: 25px;
@@ -1318,6 +1345,7 @@ background: #303030; /* Old browsers */
   margin-top: 0px;
   opacity: .6;
   text-align: center;
+  float: right;
 }
 #sum_box .db:hover {
   background: #40516f;
@@ -3597,11 +3625,12 @@ body.sidebar-icons #wrapper #page-wrapper {
 .mbm,
 .mvm,
 .mam {
-  margin-bottom: 10px !important;
+  margin-bottom: 0px !important;
 }
 .mbl,
 .mvl,
 .mal {
+  margin-top: 20px;
   margin-bottom: 0px !important;
 }
 .mbxl,
