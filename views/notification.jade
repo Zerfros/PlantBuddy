@@ -85,13 +85,15 @@ html(lang='en')
                     h2 Notification
                     .col-lg-6
                       .panel.panel-green
-                        table.table.table-hover-color
+                        table.table
                           tbody
                             tr
-                              td
-                                i.fa.fa-tint(style='color:#2AEB9B;')
-                                | &nbsp&nbspWatered
-                              td 9 mins ago
+                              td 
+                                i.fa.fa-fire(style='color:#E75B5E;') 
+                                &nbsp&nbsp#{notificationProcess}
+                              //- td #{notificationTime}
+                              td 
+                                time.timeago(datetime= "#{notificationTime}")
                             tr
                               td
                                 i.fa.fa-fire(style='color:#E75B5E;')
@@ -144,8 +146,13 @@ html(lang='en')
       script(src='/javascripts/highcharts-more.js')
       script(src='/javascripts/charts-highchart-pie.js')
       script(src='/javascripts/charts-highchart-more.js')
+      script(src='/javascripts/jquery.timeago.js')
       // CORE JAVASCRIPT
       script(src='/javascripts/main.js')
+      script.
+        jQuery(document).ready(function($) {
+          $("time.timeago").timeago()
+        });
       script.
         (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

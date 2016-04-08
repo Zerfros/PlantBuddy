@@ -153,7 +153,7 @@ hr {
 }
 #wrapper {
   width: 100%;
-  min-height: 100%;
+  height: 660px;
   background-color: #3C3C3C;
 }
 #page-wrapper {
@@ -170,9 +170,10 @@ hr {
   }
 }
 #topbar {
-  background: #ffffff;
+  background: #333333;
   width: 100%;
-  height: 70px;
+  height: 60px;
+  border-bottom: solid 3px #2AEC9D !important;
 }
 #topbar.navbar-default {
   border: 0;
@@ -182,9 +183,9 @@ hr {
   height: 100%;
   background: #333333;
   text-align: center;
-  border-bottom-style: solid;
+  /*border-bottom-style: solid;
   border-bottom-width: 3px;
-  border-color: #2AEC9D;
+  border-color: #2AEC9D;*/
 }
 
 #topbar .navbar-header #logo {
@@ -193,7 +194,7 @@ hr {
   color: #2AEC9D;
   height: 100%;
   width: 100%;
-  margin-top: 20px;
+  
 }
 #topbar .navbar-header #logo span.fa {
   display: none;
@@ -1319,6 +1320,11 @@ background: #303030; /* Old browsers */
   border-color: #66B354;
 }
 /*panel stat*/
+#sum_box .status{
+  width: 100%;
+  margin: 20px auto 0 auto;
+  padding: 0px 60px;
+}
 #sum_box .db {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1346,9 +1352,9 @@ background: #303030; /* Old browsers */
   text-align: center;
   float: right;
 }
-#sum_box .db:hover {
-  background: #40516f;
-  color: #fff;
+#sum_box {
+  /*background: #40516f;
+  color: #fff;*/
 }
 #sum_box .db:hover .icon {
   opacity: 1;
@@ -1356,6 +1362,24 @@ background: #303030; /* Old browsers */
 }
 #sum_box .db:hover p.description {
   opacity: 1;
+}
+@media (min-width: 992px) {
+  #sum_box .db{
+    height: 187px;
+    display: table;
+    width: 100%;
+  }
+  #sum_box .db .current-weather{
+    display: table-cell;
+    /*height: 100%;*/
+    vertical-align: middle;
+    float: none;
+    /*padding: 0;*/
+  }
+  #sum_box .status{
+    padding: 0 20px;
+    margin-top: 45px;
+  }
 }
 /*panel stat*/
 /*user profile*/
@@ -3629,7 +3653,6 @@ body.sidebar-icons #wrapper #page-wrapper {
 .mbl,
 .mvl,
 .mal {
-  margin-top: 20px;
   margin-bottom: 0px !important;
 }
 .mbxl,
@@ -5512,7 +5535,7 @@ li [class*=" icon-"].icon-large {
   background-color: #bf4346 !important;
 }
 .progress .progress-bar.progress-bar-orange {
-  background-color: #f34a20 !important;
+  background-color: #ae2dfe !important;
 }
 .progress .progress-bar.progress-bar-green {
   background-color: #24f078 !important;

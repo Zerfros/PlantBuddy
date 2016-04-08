@@ -8,6 +8,12 @@ var bodyParser = require('body-parser');
 var statusRoute = require('./routes/status');
 var myplantRoute = require('./routes/myplant');
 var notificationRoute = require('./routes/notification');
+var connectMongo = require('./routes/connectMongo');
+var recieveMessage = require('./routes/recieveMessage');
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+// var alertMoisture = require('./javascripts/alertData/alertMoisture');
 
 var app = express();
 
