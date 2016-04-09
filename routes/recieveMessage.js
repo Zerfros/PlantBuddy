@@ -17,7 +17,8 @@ client.on('connect', function(){
 client.on('message', function(topic, message){
 	console.log(message.toString());
 	if (parseInt(message.toString())>80) {
-		var saveData = new db({process: 'High', time: (new Date())});
+		var date = new Date();
+		var saveData = new db({process: 'High', time: (date.toISOString())});
 		saveData.save(function(err){
 			if (err){
 				return err;
@@ -29,7 +30,8 @@ client.on('message', function(topic, message){
 		// 	console.log(data);
 		// });
 	}else if (parseInt(message.toString())<30) {
-		var saveData = new db({process: 'Low', time: (new Date())});
+		var date = new Date();
+		var saveData = new db({process: 'Low', time: (date.toISOString())});
 		saveData.save(function(err){
 			if (err){
 				return err;

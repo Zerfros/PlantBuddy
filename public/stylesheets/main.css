@@ -847,6 +847,7 @@ hr {
 }
 #sidebar {
   background: #3C3C3C;
+  min-height: 0% !important;
 }
 .navbar-static-side {
   transition: 0.3s all linear;

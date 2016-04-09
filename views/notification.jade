@@ -1,4 +1,5 @@
 doctype html
+- var n = 0
 html(lang='en')
   head
     title Plant Buddy | Notification
@@ -87,28 +88,18 @@ html(lang='en')
                       .panel.panel-green
                         table.table
                           tbody
-                            tr
-                              td 
-                                i.fa.fa-fire(style='color:#E75B5E;') 
-                                &nbsp&nbsp#{notificationProcess}
-                              //- td #{notificationTime}
-                              td 
-                                time.timeago(datetime= "#{notificationTime}")
-                            tr
-                              td
-                                i.fa.fa-fire(style='color:#E75B5E;')
-                                | &nbsp&nbspHigh Temparature
-                              td 10 mins ago
-                            tr
-                              td
-                                i.fa.fa-heart(style='color:#2AEB9B;')
-                                | &nbsp&nbspApply Fertilizer
-                              td 60 mins ago
-                            tr
-                              td
-                                i.fa.fa-fire(style='color:#2AEB9B;')
-                                | &nbsp&nbspLow Temparature
-                              td 1 day ago
+                            each data in notification
+                              tr
+                                each subdata in data
+                                  if n == 0
+                                    td= subdata
+                                     - n = 1
+                                  else 
+                                    - var x = subdata
+                                    - console.log(x)
+                                    td
+                                      time.timeago(datetime= x)
+                                    - n = 0
             // END CONTENT
           // END PAGE WRAPPER
       script(src='/javascripts/jquery-1.10.2.min.js')
