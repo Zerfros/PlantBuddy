@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 
-require('../controller/statusDB');
+require('../controller/notificationDB');
 operation = mongoose.model('operation')
 
 /* GET home page. */
