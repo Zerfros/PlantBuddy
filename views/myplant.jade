@@ -81,81 +81,132 @@ html(lang='en')
                 .col-lg-12
                   .col-md-12
                     #area-chart-spline(style='width: 100%; height: 300px; display: none;')
-                .col-lg-12
+                .col-lg-12(style='padding:0px 20px;')
                   .row
-                    // <div class="col-md-12"><h2>Common Purslane</h2>
-                    //
-                      <div class="row mtl">
-                      <div class="col-md-3">
-                      <div class="form-group">
-                      <div class="text-center mbl"><img src="http://www.gardenoasis.co.uk/images/Flora_Direct/Roses/English_Rose_Abraham_Darby.jpg" alt="" class="img-responsive"/><br></div>
-                      <div class="text-center mbl"><a href="#" class="btn btn-green"><i class="fa fa-upload"></i>&nbsp;
-                      Upload</a></div>
-                      </div>
-                      </div>
-                    .col-md-9
+                    .col-md-10
                       #generalTabContent.tab-content
                         #tab-edit.tab-pane.fade.in.active
-                          form.form-horizontal(action='#')
+                          form(action='/setting',method='post')
                             h2 Plant Setting
-                            .form-group
-                              .col-sm-9.controls
-                                .row
-                                  .col-xs-9
-                                    .input-icon
-                                      i.fa.fa-leaf
-                                      input.form-control(type='text', placeholder='Plant Name')
-                            .form-group
-                              label.col-sm-3.control-label
-                                i.fa.fa-filter
-                                | &nbsp Amount of water
-                              .col-sm-9.controls
-                                .row
-                                  .col-xs-4
-                                    select.form-control
-                                      option 100 ml
-                                      option 200 ml
-                                      option 300 ml
-                                      option 400 ml
-                                      option 500 ml
+                            .col-sm-12.controls(style="padding-bottom:15px;")
+                              .row
+                                .col-xs-12
+                                  .input-icon
+                                    i.fa.fa-leaf
+                                    input.form-control(id='name', type='text', placeholder='Plant Name', name='name')
+                            label.col-xs-6.control-label(style="padding-bottom:15px;")
+                              i.fa.fa-tint
+                              | &nbsp Amount of water
+                            .col-xs-6.controls(style="padding-bottom:15px;")
+                              .row
+                                .col-xs-8
+                                  select.form-control(id='amountofWater', name='amountofWater')
+                                    option 100 ml
+                                    option 200 ml
+                                    option 300 ml
+                                    option 400 ml
+                                    option 500 ml
                             hr
                             h3 Notification Setting
-                            .form-group
-                              label.col-sm-3.control-label Temparature
-                              .col-sm-9.controls
+                              h4.col-xs-12.control-label Temparature
+                              .col-sm-12.controls
                                 .row
-                                  .col-xs-9
-                                    .radio
-                                      label.radio-inline
-                                        input(type='radio', value='0', name='gender', checked='checked')
-                                        |                                                                 Yes
-                                      label.radio-inline
-                                        input(type='radio', value='1', name='gender')
-                                        |                                                                 No
-                            .form-group
-                              label.col-sm-3.control-label Lux
-                              .col-sm-9.controls
+                                  h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
+                                    label Minimum
+                                  .col-xs-4(style="padding-bottom: 15px;")
+                                    select.form-control(id='tempMin',name='tempMin')
+                                      option 0%
+                                      option 10 %
+                                      option 20 %
+                                      option 30 %
+                                      option 40 %
+                                      option 50 %
+                                      option 60 %
+                                      option 70 %
+                                      option 80 %
+                                      option 90 %
+                                      option 100 %
+                                  h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
+                                    label Maximum
+                                  .col-xs-4(style="padding-bottom: 15px;")
+                                    select.form-control(id='tempMax',name='tempMax')
+                                      option 0%
+                                      option 10 %
+                                      option 20 %
+                                      option 30 %
+                                      option 40 %
+                                      option 50 %
+                                      option 60 %
+                                      option 70 %
+                                      option 80 %
+                                      option 90 %
+                                      option 100 %
+                              h4.col-xs-12.control-label Moisture
+                              .col-sm-12.controls
                                 .row
-                                  .col-xs-9
-                                    .radio
-                                      label.radio-inline
-                                        input(type='radio', value='0', name='gender', checked='checked')
-                                        |                                                                 Yes
-                                      label.radio-inline
-                                        input(type='radio', value='1', name='gender')
-                                        |                                                                 No
-                            .form-group
-                              label.col-sm-3.control-label Moisture
-                              .col-sm-9.controls
+                                  h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
+                                    label Minimum
+                                  .col-xs-4(style="padding-bottom: 15px;")
+                                    select.form-control(id='moisMin',name='moisMin')
+                                      option 0%
+                                      option 10 %
+                                      option 20 %
+                                      option 30 %
+                                      option 40 %
+                                      option 50 %
+                                      option 60 %
+                                      option 70 %
+                                      option 80 %
+                                      option 90 %
+                                      option 100 %
+                                  h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
+                                    label Maximum
+                                  .col-xs-4(style="padding-bottom: 15px;")
+                                    select.form-control(id='moisMax',name='moisMax')
+                                      option 0%
+                                      option 10 %
+                                      option 20 %
+                                      option 30 %
+                                      option 40 %
+                                      option 50 %
+                                      option 60 %
+                                      option 70 %
+                                      option 80 %
+                                      option 90 %
+                                      option 100 %
+                              h4.col-xs-12.control-label Lux
+                              .col-sm-12.controls
                                 .row
-                                  .col-xs-9
-                                    .radio
-                                      label.radio-inline
-                                        input(type='radio', value='0', name='gender', checked='checked')
-                                        |                                                                 Yes
-                                      label.radio-inline
-                                        input(type='radio', value='1', name='gender')
-                                        |                                                                 No
+                                  h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
+                                    label Minimum
+                                  .col-xs-4(style="padding-bottom: 15px;")
+                                    select.form-control(id='luxMin',name='luxMin')
+                                      option 0%
+                                      option 10 %
+                                      option 20 %
+                                      option 30 %
+                                      option 40 %
+                                      option 50 %
+                                      option 60 %
+                                      option 70 %
+                                      option 80 %
+                                      option 90 %
+                                      option 100 %
+                                  h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
+                                    label Maximum
+                                  .col-xs-4(style="padding-bottom: 15px;")
+                                    select.form-control(id='luxMax',name='luxMax')
+                                      option 0%
+                                      option 10 %
+                                      option 20 %
+                                      option 30 %
+                                      option 40 %
+                                      option 50 %
+                                      option 60 %
+                                      option 70 %
+                                      option 80 %
+                                      option 90 %
+                                      option 100 %
                             button.btn.btn-green.btn-block(type='submit') Finish
       // END CONTENT
     // END PAGE WRAPPER

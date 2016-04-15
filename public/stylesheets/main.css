@@ -3955,6 +3955,10 @@ body.sidebar-icons #wrapper #page-wrapper {
 .table tbody tr td {
   border-top: 1px solid #efefef;
 }
+.second {
+  border-top: 1px solid #efefef;
+  text-align: right;
+}
 .ticker-wrapper.has-js {
   margin: 0;
   padding: 0;
@@ -6714,10 +6718,11 @@ li [class*=" icon-"].icon-large {
   border-color: #e5e5e5;
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 5px !important;
 }
 label {
   font-weight: normal;
+  color: #999999;
 }
 .alert {
   -webkit-border-radius: 0 !important;

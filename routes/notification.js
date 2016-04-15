@@ -22,7 +22,6 @@ router.get('/', function(req, res, next) {
 			subNotification = [];
 		}
 		// console.log(notification);
-
 		res.render('notification', {notification : notification});
 	});
 	notification = [];
