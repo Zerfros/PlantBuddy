@@ -1,7 +1,7 @@
 
 var MQTTbroker = 'broker.mqttdashboard.com';
 var MQTTport = 8000;
-var MQTTsubTopic = 'plantbuddy/soil'; 
+var MQTTsubTopic = 'plantbuddy/moisture'; 
 
 var chart; // global variuable for chart
 var dataTopics = new Array();

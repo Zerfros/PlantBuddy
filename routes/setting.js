@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var db = require('../controller/settingDB');
-var alert = require('alerts');
 
 
 /* GET users listing. */
@@ -27,7 +26,9 @@ router.post('/', function(req, res) {
    			  min: req.body.luxMin},
    			{ upsert: true }, function(err,data){});
     console.log("Save setting");
-	alert('Foo');
+    // $.ajax({
+    //     alert("Done");
+    // });
     //alert("sometext");
     res.redirect('/myplant');
 });

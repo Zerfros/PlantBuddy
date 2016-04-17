@@ -1,3 +1,6 @@
+#myList li{ 
+  display:none;
+}
 .icon-spin {
   display: inline-block;
   -moz-animation: spin 2s infinite linear;
@@ -62,7 +65,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #dc6767;
+  color: #2AEC9D;
   text-decoration: none;
 }
 a:focus {
@@ -153,8 +156,9 @@ hr {
 }
 #wrapper {
   width: 100%;
-  height: 660px;
+  height: 100%;
   background-color: #3C3C3C;
+  /*position: absolute;*/
 }
 #page-wrapper {
   min-height: 100%;
@@ -1191,7 +1195,7 @@ background: #303030; /* Old browsers */
 /* End Left Sidebar Collapsed */
 .page-content {
   padding: 0px 20px 20px 20px;
-  min-height: 250px;
+  min-height: 100%;
 }
 #footer {
   position: fixed;
@@ -1239,6 +1243,10 @@ background: #303030; /* Old browsers */
   height: 35px;
   border: 5px solid transparent;
   margin: 0 5px;
+}
+.content{
+  min-height: 100%;
+  height: auto;
 }
 #theme-setting .content-theme-setting ul#list-color li.green-dark {
   background: #594857;
@@ -5023,6 +5031,7 @@ fieldset[disabled] .btn-pink.active {
   color: #ffffff;
   background-color: #4b5d67;
   border-color: #475861;
+  float: right;
 }
 .btn-grey:hover,
 .btn-grey:focus,
@@ -5093,19 +5102,21 @@ fieldset[disabled] .btn-dark.active {
   background-color: #594857;
   border-color: #534351;
 }
-.btn-white {
-  color: #999999;
-  background-color: #ffffff;
+.btn-white,
+.btn-white:visited,
+.btn-white:focus {
+  border-radius: 12px !important;
+  color: #e5e5e5;
+  background-color: rgba(255, 0, 0, 0);
   border-color: #e5e5e5;
 }
 .btn-white:hover,
-.btn-white:focus,
 .btn-white:active,
 .btn-white.active,
 .open .dropdown-toggle.btn-white {
-  color: #999999;
-  background-color: #ebebeb;
-  border-color: #c6c6c6;
+  color: #2AEC9D ;
+  background-color: rgba(255, 0, 0, 0);
+  border-color: #2AEC9D ;
 }
 .btn-white:active,
 .btn-white.active,

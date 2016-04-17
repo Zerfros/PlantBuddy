@@ -2,6 +2,10 @@
 
 #include <SPI.h>
 #include <Ethernet.h>
+#include <ESP8266WiFi.h>
+
+const char* ssid     = "Jupiter";    
+const char* password = "17611761"; 
 
 char MQTT_SERVER[]="broker.mqttdashboard.com";
 //byte MQTT_SERVER[] = { 161, 246, 38, 78 };
@@ -12,7 +16,7 @@ char* user = "plantbuddy";
 char* pass = "taenshiki";
 
 int soilPin = A0;
-byte mac[] = { 0xDE, 0x12, 0xBE, 0xEF, 0xFE, 0xE0 };
+byte mac[] = { 0x3E, 0x52, 0xDE, 0xE0, 0xFE, 0xE0 };
 //void callback(char* topic, byte* payload, unsigned int length);
 
 EthernetClient ethClient; // Ethernet object
@@ -34,6 +38,8 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Net begin");
   pinMode(4, OUTPUT);
+
+  WiFi.begin(ssid, password);
   
   if (Ethernet.begin(mac) == 0){
     Serial.println("Failed to configure Ethernet using DHCP");

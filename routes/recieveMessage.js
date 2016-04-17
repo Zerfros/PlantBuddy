@@ -59,7 +59,7 @@ client.on('message', function(topic, message){
 							return err;
 						}else{
 							console.log("add success");
-							setTimeout(timerMoisture, 10000)
+							setTimeout(timerMoisture, delay)
 						}
 					})
 					// db.find({}, function(data){
@@ -95,7 +95,7 @@ client.on('message', function(topic, message){
 							return err;
 						}else{
 							console.log("add success");
-							setTimeout(timerTemperature, 10000)
+							setTimeout(timerTemperature, delay)
 						}
 					})
 					// db.find({}, function(data){
