@@ -2,7 +2,7 @@ doctype html
 - var n = 0
 html(lang='en')
   head
-    title Plant Buddy | Notification
+    title Plant Buddy | History
     link(rel='shortcut icon', type='image/x-icon', href="images/logoIcon.ico")
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
@@ -65,10 +65,10 @@ html(lang='en')
                     .icon-bg.bg-orange
                   span.menu-title My Plant
               li.active
-                a(href='/notification')
-                  i.fa.fa-bell.fa-fw
+                a(href='/history')
+                  i.fa.fa-history.fa-fw
                     .icon-bg.bg-pink
-                  span.menu-title Notification
+                  span.menu-title History
               li
                 a(href='#')
                   i.fa.fa-sign-out.fa-fw
@@ -85,7 +85,7 @@ html(lang='en')
                 .col-lg-12
                   .row
                     .col-lg-10
-                      h2 Notification
+                      h2 History
                       .panel.panel-green
                         table.table#myList
                           tbody

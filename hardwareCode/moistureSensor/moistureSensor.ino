@@ -47,10 +47,14 @@ void loop() {
   int valueInt = analogRead(moisturePin);
   char valueChar [4];
   int moisture = 0;
-  moisture = map(valueInt, 280, 1023, 100, 0);
+  moisture = map(valueInt, 320, 1023, 100, 0);
   sprintf(valueChar , "%d" , moisture);
   client.publish(outTopic, valueChar);
   delay(500);
-  Serial.println(valueChar);
+  Serial.print("moisture = ");
+  Serial.print(moisture);
+  Serial.println(" %");
+  Serial.print("valueInt = ");
+  Serial.println(valueInt);
   client.loop();
 }

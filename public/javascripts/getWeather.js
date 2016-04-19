@@ -4,8 +4,30 @@ xhttp.onreadystatechange = function() {
         getWeather(xhttp);
     }
 };
-xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1609350&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
-xhttp.send();
+if(locations == 'Bangkok'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1609350&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Nonthaburi'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608133&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Nakhon Pathom'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608534&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Pathum Thani'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1620875&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Samut Prakan'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606590&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Suphan Buri'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606033&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Chon Buri'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1611110&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}
+
+
 
 function getWeather(xml) {
     //TODAY
@@ -24,6 +46,7 @@ function getWeather(xml) {
     var id = xmlDoc.getElementsByTagName('symbol')[0];
     var idWeather = id.getAttribute("number");
     idWeather = parseInt(idWeather);
+    console.log("test");
     if (idWeather < 300 && idWeather >= 200) {
         document.getElementById("img-weather").src = "images/weather/thunderstorm.png";
     } else if (idWeather < 400 && idWeather >= 300) {

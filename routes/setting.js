@@ -8,7 +8,7 @@ var db = require('../controller/settingDB');
 router.post('/', function(req, res) {
     console.log(req.body);
     db.update({ sensorName: "plantName" },
-   			{ max: req.body.name},
+   			{ max: req.body.plantName},
    			{ upsert: true }, function(err,data){});
     db.update({ sensorName: "amountofWater" },
    			{ max: req.body.amountofWater},
@@ -25,6 +25,10 @@ router.post('/', function(req, res) {
    			{ max: req.body.luxMax,
    			  min: req.body.luxMin},
    			{ upsert: true }, function(err,data){});
+    db.update({ sensorName: "location" },
+        { max: req.body.locations},
+        { upsert: true }, function(err,data){});
+    console.log(req.body);
     console.log("Save setting");
     // $.ajax({
     //     alert("Done");

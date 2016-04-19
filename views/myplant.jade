@@ -64,10 +64,10 @@ html(lang='en')
                     .icon-bg.bg-orange
                   span.menu-title My Plant
               li
-                a(href='/notification')
-                  i.fa.fa-bell.fa-fw
+                a(href='/history')
+                  i.fa.fa-history.fa-fw
                     .icon-bg.bg-pink
-                  span.menu-title Notification
+                  span.menu-title History
               li
                 a(href='#')
                   i.fa.fa-sign-out.fa-fw
@@ -93,7 +93,7 @@ html(lang='en')
                                 .col-xs-12
                                   .input-icon
                                     i.fa.fa-leaf
-                                    input.form-control(id='name', type='text', placeholder='Plant Name', name='name')
+                                    input.form-control(id='plantName', type='text', placeholder='Plant Name', name='plantName')
                             label.col-xs-6.control-label(style="padding-bottom:15px;")
                               i.fa.fa-tint
                               | &nbsp Amount of water
@@ -101,11 +101,28 @@ html(lang='en')
                               .row
                                 .col-xs-8
                                   select.form-control(id='amountofWater', name='amountofWater')
-                                    option 100 ml
-                                    option 200 ml
-                                    option 300 ml
-                                    option 400 ml
-                                    option 500 ml
+                                    option(disabled='disabled', selected='selected') Unit : Millilitre
+                                    option 0
+                                    option 100
+                                    option 200
+                                    option 300
+                                    option 400
+                                    option 500
+                            label.col-xs-6.control-label(style="padding-bottom:15px;")
+                              i.fa.fa-map-marker
+                              | &nbsp Location
+                            .col-xs-6.controls(style="padding-bottom:15px;")
+                              .row
+                                .col-xs-8
+                                  select.form-control(id='locations', name='locations')
+                                    option(disabled='disabled', selected='selected') Select your city
+                                    option Bangkok
+                                    option Nonthaburi
+                                    option Pathum Thani
+                                    option Samut Prakan
+                                    option Suphan Buri
+                                    option Chon Buri
+                                    option Nakhon Pathom
                             hr
                             h3 Notification Setting
                               h4.col-xs-12.control-label Temparature
@@ -115,32 +132,34 @@ html(lang='en')
                                     label Minimum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='tempMin',name='tempMin')
-                                      option 0%
-                                      option 10 %
-                                      option 20 %
-                                      option 30 %
-                                      option 40 %
-                                      option 50 %
-                                      option 60 %
-                                      option 70 %
-                                      option 80 %
-                                      option 90 %
-                                      option 100 %
+                                      option(disabled='disabled', selected='selected') Unit : Percentage
+                                      option 0
+                                      option 10
+                                      option 20 
+                                      option 30 
+                                      option 40 
+                                      option 50 
+                                      option 60 
+                                      option 70 
+                                      option 80 
+                                      option 90 
+                                      option 100 
                                   h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
                                     label Maximum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='tempMax',name='tempMax')
-                                      option 0%
-                                      option 10 %
-                                      option 20 %
-                                      option 30 %
-                                      option 40 %
-                                      option 50 %
-                                      option 60 %
-                                      option 70 %
-                                      option 80 %
-                                      option 90 %
-                                      option 100 %
+                                      option(disabled='disabled', selected='selected') Unit : Percentage
+                                      option 0
+                                      option 10 
+                                      option 20 
+                                      option 30 
+                                      option 40 
+                                      option 50 
+                                      option 60 
+                                      option 70 
+                                      option 80 
+                                      option 90 
+                                      option 100 
                               h4.col-xs-12.control-label Moisture
                               .col-sm-12.controls
                                 .row
@@ -148,32 +167,34 @@ html(lang='en')
                                     label Minimum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='moisMin',name='moisMin')
-                                      option 0%
-                                      option 10 %
-                                      option 20 %
-                                      option 30 %
-                                      option 40 %
-                                      option 50 %
-                                      option 60 %
-                                      option 70 %
-                                      option 80 %
-                                      option 90 %
-                                      option 100 %
+                                      option(disabled='disabled', selected='selected') Unit : Percentage
+                                      option 0
+                                      option 10 
+                                      option 20 
+                                      option 30 
+                                      option 40 
+                                      option 50 
+                                      option 60 
+                                      option 70 
+                                      option 80 
+                                      option 90 
+                                      option 100 
                                   h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
                                     label Maximum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='moisMax',name='moisMax')
-                                      option 0%
-                                      option 10 %
-                                      option 20 %
-                                      option 30 %
-                                      option 40 %
-                                      option 50 %
-                                      option 60 %
-                                      option 70 %
-                                      option 80 %
-                                      option 90 %
-                                      option 100 %
+                                      option(disabled='disabled', selected='selected') Unit : Percentage
+                                      option 0
+                                      option 10 
+                                      option 20 
+                                      option 30 
+                                      option 40 
+                                      option 50 
+                                      option 60 
+                                      option 70 
+                                      option 80 
+                                      option 90 
+                                      option 100 
                               h4.col-xs-12.control-label Lux
                               .col-sm-12.controls
                                 .row
@@ -181,32 +202,34 @@ html(lang='en')
                                     label Minimum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='luxMin',name='luxMin')
-                                      option 0%
-                                      option 10 %
-                                      option 20 %
-                                      option 30 %
-                                      option 40 %
-                                      option 50 %
-                                      option 60 %
-                                      option 70 %
-                                      option 80 %
-                                      option 90 %
-                                      option 100 %
+                                      option(disabled='disabled', selected='selected') Unit : Percentage
+                                      option 0
+                                      option 10 
+                                      option 20 
+                                      option 30 
+                                      option 40 
+                                      option 50 
+                                      option 60 
+                                      option 70 
+                                      option 80 
+                                      option 90 
+                                      option 100 
                                   h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
                                     label Maximum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='luxMax',name='luxMax')
-                                      option 0%
-                                      option 10 %
-                                      option 20 %
-                                      option 30 %
-                                      option 40 %
-                                      option 50 %
-                                      option 60 %
-                                      option 70 %
-                                      option 80 %
-                                      option 90 %
-                                      option 100 %
+                                      option(disabled='disabled', selected='selected') Unit : Percentage
+                                      option 0
+                                      option 10 
+                                      option 20 
+                                      option 30 
+                                      option 40 
+                                      option 50 
+                                      option 60 
+                                      option 70 
+                                      option 80 
+                                      option 90 
+                                      option 100 
                             button.btn.btn-green.btn-block(type='submit') Finish
       // END CONTENT
     // END PAGE WRAPPER
@@ -240,6 +263,17 @@ html(lang='en')
     // LOADING SCRIPTS FOR CHARTS
     script(src='/javascripts/highcharts.js')
     script(src='/javascripts/data.js')
+    script.
+      var amountofWater = "#{amountofWater}";
+      var moisMax = "#{moisMax}";
+      var moisMin = "#{moisMin}";
+      var tempMax = "#{tempMax}";
+      var tempMin = "#{tempMin}";
+      var luxMax = "#{luxMax}";
+      var luxMin = "#{luxMin}";
+      var name = "#{name}";
+      var locations = "#{location}";
+    script(src='/javascripts/formChk.js')
     script(src='/javascripts/drilldown.js')
     script(src='/javascripts/exporting.js')
     script(src='/javascripts/highcharts-more.js')

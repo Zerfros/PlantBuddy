@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', statusRoute);
 app.use('/myplant', myplantRoute);
-app.use('/notification', notificationRoute);
+app.use('/history', notificationRoute);
 app.use('/setting', settingRoute);
 // ///////////////////////////////////////////////////////////////////////////////
 
