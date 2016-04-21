@@ -1,0 +1,16 @@
+html
+  title Plant Buddy | Log in
+  link(rel='shortcut icon', type='image/x-icon', href="images/logoIcon.ico")
+  head
+    link(type='text/css', rel='stylesheet', href='/stylesheets/login.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+  body
+    h4 Plant Buddy
+    .login-page
+      .form
+        form.login-form
+          input(type='text', placeholder='Username')
+          input(type='password', placeholder='Password')
+          button(formaction='/') login
+
+

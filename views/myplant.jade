@@ -69,7 +69,7 @@ html(lang='en')
                     .icon-bg.bg-pink
                   span.menu-title History
               li
-                a(href='#')
+                a(href='/login')
                   i.fa.fa-sign-out.fa-fw
                     .icon-bg.bg-green
                   span.menu-title Log Out
@@ -94,20 +94,6 @@ html(lang='en')
                                   .input-icon
                                     i.fa.fa-leaf
                                     input.form-control(id='plantName', type='text', placeholder='Plant Name', name='plantName')
-                            label.col-xs-6.control-label(style="padding-bottom:15px;")
-                              i.fa.fa-tint
-                              | &nbsp Amount of water
-                            .col-xs-6.controls(style="padding-bottom:15px;")
-                              .row
-                                .col-xs-8
-                                  select.form-control(id='amountofWater', name='amountofWater')
-                                    option(disabled='disabled', selected='selected') Unit : Millilitre
-                                    option 0
-                                    option 100
-                                    option 200
-                                    option 300
-                                    option 400
-                                    option 500
                             label.col-xs-6.control-label(style="padding-bottom:15px;")
                               i.fa.fa-map-marker
                               | &nbsp Location
@@ -196,7 +182,7 @@ html(lang='en')
                                       option 90 
                                       option 100 
                               h4.col-xs-12.control-label Lux
-                              .col-sm-12.controls
+                              .col-sm-12.controls(style="padding-bottom:30px;")
                                 .row
                                   h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
                                     label Minimum
@@ -230,7 +216,7 @@ html(lang='en')
                                       option 80 
                                       option 90 
                                       option 100 
-                            button.btn.btn-green.btn-block(type='submit') Finish
+                            button.btn.btn-green.btn-block(type='submit') Apply
       // END CONTENT
     // END PAGE WRAPPER
     script(src='/javascripts/jquery-1.10.2.min.js')

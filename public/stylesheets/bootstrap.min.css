@@ -1298,7 +1298,7 @@ th {
 	background-color: #f9f9f9
 }
 .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
-	background-color: #f5f5f5
+	background-color: #404040;
 }
 table col[class*=col-] {
 	position: static;
@@ -1889,11 +1889,13 @@ textarea.input-lg, select[multiple].input-lg {
 	line-height: 1.5;
 	border-radius: 3px
 }
+
 .btn-block {
 	display: block;
 	width: 100%;
 	padding-left: 0;
-	padding-right: 0
+	padding-right: 0;
+
 }
 .btn-block+.btn-block {
 	margin-top: 5px
@@ -4110,7 +4112,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
 .panel-body {
-	padding: 10px 15px 15px 15px;
+	padding: 10px 15px 45px 15px;
 }
 .panel-heading {
 	padding: 10px 15px;

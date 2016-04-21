@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var loginRoute = require('./routes/login');
 var statusRoute = require('./routes/status');
 var myplantRoute = require('./routes/myplant');
 var notificationRoute = require('./routes/notification');
@@ -34,6 +35,7 @@ app.use('/', statusRoute);
 app.use('/myplant', myplantRoute);
 app.use('/history', notificationRoute);
 app.use('/setting', settingRoute);
+app.use('/login', loginRoute);
 // ///////////////////////////////////////////////////////////////////////////////
 
 // catch 404 and forward to error handler

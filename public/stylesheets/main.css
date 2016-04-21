@@ -162,7 +162,7 @@ hr {
 }
 #page-wrapper {
   min-height: 100%;
-  padding: 0 !important;
+  padding-top: 15px !important;
   background-color: #333333;
   transition: 0.3s all linear;
 }
@@ -1376,7 +1376,7 @@ background: #303030; /* Old browsers */
   #sum_box .db{
     height: 187px;
     display: table;
-    width: 100%;
+    width: 80%;
   }
   #sum_box .db .current-weather{
     display: table-cell;
@@ -1386,7 +1386,7 @@ background: #303030; /* Old browsers */
     /*padding: 0;*/
   }
   #sum_box .status{
-    padding: 0 20px;
+    padding: 0 200px;
     margin-top: 45px;
   }
 }
@@ -3662,7 +3662,7 @@ body.sidebar-icons #wrapper #page-wrapper {
 .mbl,
 .mvl,
 .mal {
-  margin-bottom: 0px !important;
+  margin-bottom: 20px !important;
 }
 .mbxl,
 .mvxl,
@@ -4276,9 +4276,10 @@ a.list-group-item.active > .badge,
   box-shadow: none !important;
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
-  /*order: 5px solid #e5e5e5;*/
-  border-radius: 8px !important;
+  /*border-radius: 0 !important;*/
+  /*border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;*/
+  /*border-radius: 8px !important;*/
   /*box-shadow: 5px 5px 8px #000000!important;*/
 }
 .panel > .panel-heading {
@@ -4844,8 +4845,8 @@ fieldset[disabled] .btn-orange.active {
 }
 .btn-green {
   color: #ffffff;
-  background-color: #2AEC9D;
-  border-color: #2AEC9D;
+  background-color: #22BD7E;
+  border-color: #22BD7E;
 }
 .btn-green:hover,
 .btn-green:focus,
@@ -4853,8 +4854,8 @@ fieldset[disabled] .btn-orange.active {
 .btn-green.active,
 .open .dropdown-toggle.btn-green {
   color: #ffffff;
-  background-color: #3a7157;
-  border-color: #305d48;
+  background-color: #2AEC9D;
+  border-color: #2AEC9D;
 }
 .btn-green:active,
 .btn-green.active,
@@ -5551,7 +5552,7 @@ li [class*=" icon-"].icon-large {
   background-color: #bf4346 !important;
 }
 .progress .progress-bar.progress-bar-orange {
-  background-color: #ae2dfe !important;
+  background-color: #15f4ee !important;
 }
 .progress .progress-bar.progress-bar-green {
   background-color: #24f078 !important;
@@ -5560,7 +5561,7 @@ li [class*=" icon-"].icon-large {
   background-color: #ff207a !important;
 }
 .progress .progress-bar.progress-bar-blue {
-  background-color: #15f4ee !important;
+  background-color: #ae2dfe !important;
 }
 .progress .progress-bar.progress-bar-violet {
   background-color: #9351ad !important;
@@ -6693,7 +6694,8 @@ li [class*=" icon-"].icon-large {
   color: #999999;
 }
 .table.table-hover-color tbody tr:hover td:first-child {
-  border-left: 4px solid #dc6767;
+  /*border-left: 4px solid #dc6767;*/
+  background-color: #404040;
 }
 .table-actions {
   margin-bottom: 20px;
