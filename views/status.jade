@@ -72,13 +72,18 @@ html(lang='en')
                     .icon-bg.bg-pink
                   span.menu-title History
               li
+                a(href='/tips')
+                  i.fa.fa-lightbulb-o
+                    .icon-bg.bg-pink
+                  span.menu-title Tips
+              li
                 a(href='/login')
                   i.fa.fa-sign-out.fa-fw
                     .icon-bg.bg-green
                   span.menu-title Log Out
         // END SIDEBAR MENU
         // BEGIN PAGE WRAPPER
-        #page-wrapper
+        #page-wrapper(style="height: 670px !important;")
           // BEGIN CONTENT
           .page-content
             #tab-general
@@ -137,12 +142,12 @@ html(lang='en')
                             .progress.progress-sm
                               .progress-bar.progress-bar-orange(id='test', role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
                                 span.sr-only 0% Complete (success)
-                          span(style='color: #ae2dfe;')
-                            | Temperature
-                            small.pull-right.text-muted 60%
-                            .progress.progress-sm
-                              .progress-bar.progress-bar-blue(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%;')
-                                span.sr-only 60% Complete (success)
+                          //- span(style='color: #ae2dfe;')
+                          //-   | Temperature
+                          //-   small.pull-right.text-muted 60%
+                          //-   .progress.progress-sm
+                          //-     .progress-bar.progress-bar-blue(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%;')
+                          //-       span.sr-only 60% Complete (success)
                           //- span(style='color: #24f078;')
                           //-   | Soil nutrient content
                           //-   small.pull-right.text-muted 55%
@@ -151,10 +156,12 @@ html(lang='en')
                           //-       span.sr-only 55% Complete (success)
                           span(style='color: #ff207a;')
                             | Brightness
-                            small.pull-right.text-muted 66%
+                            small.pull-right.text-muted <span id="brightnessData"></span>%
                             .progress.progress-sm
-                              .progress-bar.progress-bar-yellow(role='progressbar', aria-valuenow='66', aria-valuemin='0', aria-valuemax='100', style='width: 66%;')
+                              .progress-bar.progress-bar-yellow(id='test2', role='progressbar', aria-valuenow='66', aria-valuemin='0', aria-valuemax='100', style='width: 66%;')
                                 span.sr-only 66% Complete (success)
+            form(action='/wateringbyUser',method='post', id="wateringbyUser")                    
+              button.btn.btn-green.btn-block(type='submit') Watering Now !
             // END CONTENT
           // END PAGE WRAPPER
       script(src='/javascripts/jquery-1.10.2.min.js')
@@ -184,6 +191,9 @@ html(lang='en')
       script(src='/javascripts/jquery.flot.spline.js')
       script(src='/javascripts/zabuto_calendar.min.js')
       script(src='/javascripts/index.js')
+      script.
+        var wateringbyUser = "#{wateringbyUser}";
+      script(src='/javascripts/getAgain.js')
       // LOADING SCRIPTS FOR CHARTS
       script(src='/javascripts/highcharts.js')
       script(src='/javascripts/data.js')
@@ -196,7 +206,7 @@ html(lang='en')
       script(src='/javascripts/main.js')
       script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
       script(src='/javascripts/connect2Hw/mqttws31.js')
-      script(src='/javascripts/connect2Hw/receiveMoisture.js')
+      script(src='/javascripts/connect2Hw/showData.js')
       script.
         var plantName = "#{plantName}";
         var locations = "#{location}";

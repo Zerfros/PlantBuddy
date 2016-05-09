@@ -12,6 +12,8 @@ var notificationRoute = require('./routes/notification');
 var connectMongo = require('./routes/connectMongo');
 var recieveMessage = require('./routes/recieveMessage');
 var settingRoute = require('./routes/setting');
+var wateringbyUserRoute = require('./routes/wateringbyUser');
+var tipsRoute = require('./routes/tips');
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,6 +37,8 @@ app.use('/', statusRoute);
 app.use('/myplant', myplantRoute);
 app.use('/history', notificationRoute);
 app.use('/setting', settingRoute);
+app.use('/tips', tipsRoute);
+app.use('/wateringbyUser', wateringbyUserRoute);
 app.use('/login', loginRoute);
 // ///////////////////////////////////////////////////////////////////////////////
 

@@ -4065,6 +4065,11 @@ h6 {
   font-weight: 300;
   color: #eeeeee;
 }
+h4#tips {
+  font-family: "TH Sarabun New";
+  font-weight: 300;
+  color: #eeeeee;
+}
 .note {
   margin: 0 0 20px 0;
   padding: 15px 30px 15px 15px;

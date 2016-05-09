@@ -1,0 +1,183 @@
+doctype html
+html(lang='en')
+  head
+    title Plant Buddy | Tips
+    link(rel='shortcut icon', type='image/x-icon', href="images/logoIcon.ico")
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon', href='images/icons/favicon.ico')
+    link(rel='apple-touch-icon', href='images/icons/favicon.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='images/icons/favicon-72x72.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='images/icons/favicon-114x114.png')
+    // Loading bootstrap css
+    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700')
+    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700,300')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/jquery-ui-1.10.4.custom.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/animate.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/all.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/main.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/style-responsive.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/zabuto_calendar.min.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/pace.css')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/jquery.news-ticker.css')
+ body(onload='init();')
+    div.content
+      // BEGIN THEME SETTING
+      #theme-setting
+        .content-theme-setting
+          select#list-style.form-control
+            option(value='style1') Flat Squared style
+            option(value='style2') Flat Rounded style
+            option(value='style3', selected='selected') Flat Border style
+      // END THEME SETTING
+      // BEGIN TOPBAR
+      #header-topbar-option-demo.page-header-topbar
+        nav#topbar.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0;', data-step='3')
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.sidebar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a#logo.navbar-brand(href='/')
+              span.fa.fa-rocket
+              span.logo-text Plant Buddy
+              span.logo-text-icon(style='display: none') µ
+      // END TOPBAR
+      #wrapper
+        // BEGIN SIDEBAR MENU
+        nav#sidebar.navbar-default.navbar-static-side(role='navigation', data-step='2', data-intro='Template has <b>many navigation styles</b>', data-position='right')
+          .sidebar-collapse.menu-scroll.collapse
+            ul#side-menu.nav
+              .clearfix
+              li
+                a(href='/')
+                  i.fa.fa-align-left.fa-fw
+                    .icon-bg.bg-orange
+                  span.menu-title Plant Status
+              li
+                a(href='/myplant')
+                  i.fa.fa-leaf.fa-fw
+                    .icon-bg.bg-orange
+                  span.menu-title My Plant
+              li
+                a(href='/history')
+                  i.fa.fa-history.fa-fw
+                    .icon-bg.bg-pink
+                  span.menu-title History
+              li.active
+                a(href='/tips')
+                  i.fa.fa-lightbulb-o
+                    .icon-bg.bg-pink
+                  span.menu-title Tips
+              li
+                a(href='/login')
+                  i.fa.fa-sign-out.fa-fw
+                    .icon-bg.bg-green
+                  span.menu-title Log Out
+        #page-wrapper
+          // BEGIN CONTENT
+          .page-content
+            #tab-general
+              .row.mbl
+                .col-lg-12
+                  .col-md-12
+                    #area-chart-spline(style='width: 100%; height: 300px; display: none;')
+                .col-lg-12
+                  .col-lg-10
+                    h2 Tip (for potted plants)
+                    .col-lg-6(style='margin:auto;')
+                      img(src='images/tipsBanner.jpg', style='width: 100%')
+                      //- iframe(src='http://player.vimeo.com/video/22439234', style='width: 100%; height:340px; border:0')
+                  .col-lg-10
+                    br
+                    h4#tips 1.เลือกกระถางให้เหมาะสม
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ขนาดกระถางและขนาดต้นไม้เป็นเรื่องสำคัญอันดับต้น ๆ ที่เราควรต้องคำนึงถึง เพราะหากต้นไม้มีขนาดใหญ่หรือเล็กกว่ากระถาง ก็จะดูไม่สมดุล ดังนั้นจึงควรเลือกกระถางให้เหมาะสม รวมไปถึงต้องตรงกับความต้องการของเราด้วย เช่น หากว่าต้นไม้เป็นพันธุ์ที่โตเร็ว และต้องเปลี่ยนกระถางบ่อย ๆ ก็ควรเลือกใช้กระถางใหญ่ที่มีลักษณะกลม ปากกว้าง ซึ่งเป็นกระถางที่ใช้กันทั่วไปและเป็นที่นิยม เพราะง่ายต่อการย้ายต้นไม้ลงดิน หรือถ้าหากคุณเป็นคนที่ชอบจัดสวน เคลื่อนย้ายตำแหน่งกระถางต้นไม้บ่อย ๆ ก็ควรเลือกใช้กระถางที่ทำจากโฟม หรือกระถางที่ทำมาจากไฟเบอร์กลาสเพราะมีความเบา เคลื่อนย้ายสะดวก ส่วนถ้าต้องการกระถางที่มีความหนักแน่น ก็ควรเลือกใช้กระถางเซรามิก หรือกระถางที่ทำมาจากปูน
+                    br
+                    h4#tips 2. ควรใช้ดินผสม
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ดินที่ใช้ในกระถางต้นไม้ควรจะเป็นดินปนทราย ที่มีพีทมอส ปุ๋ยหมัก ขุยมะพร้าว ถ่านป่น หรืออิฐป่น ผสมอยู่ด้วย เพื่อช่วยให้พืชได้รับสารอาหารอย่างครบถ้วน ไม่มีความเป็นกรด-ด่างในดินมากเกินไป และเพื่อให้ดินถ่ายเทอากาศ และอุ้มน้ำได้ดี นอกจากนี้ควรหมั่นพรวนดินในกระถางด้วยตะเกียบหรือไม้แหลมก็ได้ และควรใส่ปุ่ยเพื่อบำรุงให้ต้นไม้เจริญงอกงามอยู่เสมอด้วย
+                    br
+                    h4#tips 3. ดูแลให้ถูกต้อง
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เพื่อให้ต้นไม้มีการเจริญเติบโตได้อย่างดี มีความสวยงามแข็งแรง จะได้ไม่ต้องเปลี่ยนกระถางบ่อย ๆ เราก็ควรดูแลต้นไม้ในกระถางให้ถูกวิธี ด้วยการเลือกใช้ดินให้เหมาะสมกับชนิดพืช อย่าลืมปนกรวดลงไปในดินเพื่อให้ช่วยยึดพืช และเพิ่มช่องว่างให้อากาศและน้ำถ่ายเทได้สะดวก ไม่ขังอยู่ในกระถางจนรากเน่า นอกจากนี้ควรรดน้ำอย่างพอดีกับต้นไม้ และหมั่นนำไปวางกลางแจ้ง เพื่อเปิดโอกาสให้พืชได้รับแสงอาทิตย์ไว้คอยสังเคราะห์แสงด้วย แต่ก็ไม่ควรตั้งกระถางต้นไม้ในที่ที่มีความร้อนหรือแดดแรงจนเกินไป ลมโกรกมาก ๆ ก็ไม่เหมาะ เพราะอาจจะทำให้ลำต้นโย้เอียงได้
+                    br
+                    .col-lg-6(style='margin:auto;')
+                      img(src='images/tipsImg1.jpg', style='width: 100%')
+                    h4#tips 4. จัดเรียงกระถางให้เหมาะสม
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เราสามารถเลือกปลูกดอกไม้ในกระถางได้หลายชนิด แต่ก็ควรจัดวางกระถางให้เหมาะสม โดยจัดวางกระถางในตำแหน่งที่แสงสามารถส่องถึง อากาศถ่ายเทได้สะดวก ที่สำคัญต้องจัดเรียงลำดับกระถางให้ดี เแนะนำให้เรียงตามลำดับความสูง กระถางที่มีต้นไม้สูง ๆ ก็ไม่ควรอยู่ในตำแหน่งที่จะบังแสงที่จะส่องไปถึงต้นไม้เล็ก ๆ ได้ จะได้ไม้แย่งแสงกัน พาให้ต้นไม้พันธุ์ที่เตี้ยกว่า เสียโอกาสรับธาตุอาหารได้อย่างเต็มที่
+                    br
+                    h4#tips 5. รดน้ำอย่างถูกวิธี
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;หากสังเกตเห็นว่าหน้าดินเริ่มแห้ง ก็แสดงว่าต้นไม้เริ่มขาดน้ำ แต่การจะรดน้ำต้นไม้ในกระถางให้ต้นไม้ได้น้ำอย่างเต็มที่ อันดับแรกต้องดูที่ชนิดต้นไม้ก่อน ว่าเป็นพืชที่ชอบน้ำมากน้อยแค่ไหน ถ้าชอบน้ำน้อย ให้รดน้ำด้วยวิธีใช้ขวดสเปรย์ฉีดพรมจนชุ่มก็ได้ แต่ถ้าเป็นต้นไม้ชนิดที่ชอบน้ำมาก ให้ค่อย ๆ ใช้น้ำอุ่นรดลงไปที่หน้าดิน เพราะน้ำอุ่นจะซึมลงสู่ดินได้ง่ายกว่าน้ำอุณหภูมิปกติ ระหว่างที่รดน้ำก็ค่อย ๆ ใช้ดินสอหรือตะเกียบจิ้มดินให้เป็นรู เพื่อช่วยให้น้ำซึมลงสู่รากได้อย่างทั่วถึง
+                    br
+                    h4#tips 6. ให้ปุ๋ยและสารอาหารสม่ำเสมอ
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ต้นไม้อาจจะเจริญเติบโตได้ไม่เต็มที่ถ้าเราไม่ให้ปุ๋ยเป็นอาหารเสริมเลย ดังนั้นนอกจากการดูแลขั้นพื้นฐานอย่างการรดน้ำพรวนดินแล้ว โดยสามารถสังเกตได้จากใบหากมีอาการผิดปกติ เช่น เหลือง แห้ง เหี่ยว บิดงอ เป็นต้น จะเลือกใช้น้ำหมักธรรมชาติ หรือปุ๋ยตามชนิดที่พืชต้องการก็ได้
+                    br
+                    h4#tips 7. ถึงเวลาเปลี่ยนถ่าย
+                    p#tips
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เมื่อพืชเริ่มหยุดการเจริญเติบโต และไม่ค่อยรับน้ำแล้ว ก็ให้ตรวจสอบดูที่รากของต้นไม้ได้เลย เพราะนี่คือสัญญาณที่บอกว่า ถึงเวลาต้องเปลี่ยนกระถางเพราะต้นไม้โตเกินกว่าที่จะอยู่ในกระถางเดิมแล้ว
+                    br
+                    br
+                    br
+                    p#tips(style="text-align:right;")
+                      | Credit : kapook.com
+        // END CONTENT
+      // END PAGE WRAPPER
+    script(src='/javascripts/jquery-1.10.2.min.js')
+    script(src='/javascripts/jquery-migrate-1.2.1.min.js')
+    script(src='/javascripts/jquery-ui.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/bootstrap-hover-dropdown.js')
+    script(src='/javascripts/html5shiv.js')
+    script(src='/javascripts/respond.min.js')
+    script(src='/javascripts/jquery.metisMenu.js')
+    script(src='/javascripts/jquery.slimscroll.js')
+    script(src='/javascripts/jquery.cookie.js')
+    script(src='/javascripts/icheck.min.js')
+    script(src='/javascripts/custom.min.js')
+    script(src='/javascripts/jquery.news-ticker.js')
+    script(src='/javascripts/jquery.menu.js')
+    script(src='/javascripts/pace.min.js')
+    script(src='/javascripts/holder.js')
+    script(src='/javascripts/responsive-tabs.js')
+    script(src='/javascripts/jquery.flot.js')
+    script(src='/javascripts/jquery.flot.categories.js')
+    script(src='/javascripts/jquery.flot.pie.js')
+    script(src='/javascripts/jquery.flot.tooltip.js')
+    script(src='/javascripts/jquery.flot.resize.js')
+    script(src='/javascripts/jquery.flot.fillbetween.js')
+    script(src='/javascripts/jquery.flot.stack.js')
+    script(src='/javascripts/jquery.flot.spline.js')
+    script(src='/javascripts/zabuto_calendar.min.js')
+    script(src='/javascripts/index.js')
+    // LOADING SCRIPTS FOR CHARTS
+    script(src='script/highcharts.js')
+    script(src='script/data.js')
+    script(src='script/drilldown.js')
+    script(src='script/exporting.js')
+    script(src='script/highcharts-more.js')
+    script(src='script/charts-highchart-pie.js')
+    script(src='script/charts-highchart-more.js')
+    // CORE JAVASCRIPT
+    script(src='script/main.js')
+    script.
+      (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-145464-12', 'auto');
+      ga('send', 'pageview');

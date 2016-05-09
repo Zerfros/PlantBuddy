@@ -44,51 +44,51 @@ else if (moisMin == "90")
 else if (moisMin == "100")
 	document.getElementById("moisMin").selectedIndex = "11";
 
-if (tempMax == "0")
-	document.getElementById("tempMax").selectedIndex = "1";
-else if (tempMax == "10")
-	document.getElementById("tempMax").selectedIndex = "2";
-else if (tempMax == "20")
-	document.getElementById("tempMax").selectedIndex = "3";
-else if (tempMax == "30")
-	document.getElementById("tempMax").selectedIndex = "4";
-else if (tempMax == "40")
-	document.getElementById("tempMax").selectedIndex = "5";
-else if (tempMax == "50")
-	document.getElementById("tempMax").selectedIndex = "6";
-else if (tempMax == "60")
-	document.getElementById("tempMax").selectedIndex = "7";
-else if (tempMax == "70")
-	document.getElementById("tempMax").selectedIndex = "8";
-else if (tempMax == "80")
-	document.getElementById("tempMax").selectedIndex = "9";
-else if (tempMax == "90")
-	document.getElementById("tempMax").selectedIndex = "10";
-else if (tempMax == "100")
-	document.getElementById("tempMax").selectedIndex = "11";
+// if (tempMax == "0")
+// 	document.getElementById("tempMax").selectedIndex = "1";
+// else if (tempMax == "10")
+// 	document.getElementById("tempMax").selectedIndex = "2";
+// else if (tempMax == "20")
+// 	document.getElementById("tempMax").selectedIndex = "3";
+// else if (tempMax == "30")
+// 	document.getElementById("tempMax").selectedIndex = "4";
+// else if (tempMax == "40")
+// 	document.getElementById("tempMax").selectedIndex = "5";
+// else if (tempMax == "50")
+// 	document.getElementById("tempMax").selectedIndex = "6";
+// else if (tempMax == "60")
+// 	document.getElementById("tempMax").selectedIndex = "7";
+// else if (tempMax == "70")
+// 	document.getElementById("tempMax").selectedIndex = "8";
+// else if (tempMax == "80")
+// 	document.getElementById("tempMax").selectedIndex = "9";
+// else if (tempMax == "90")
+// 	document.getElementById("tempMax").selectedIndex = "10";
+// else if (tempMax == "100")
+// 	document.getElementById("tempMax").selectedIndex = "11";
 
-if (tempMin == "0")
-	document.getElementById("tempMin").selectedIndex = "1";
-else if (tempMin == "10")
-	document.getElementById("tempMin").selectedIndex = "2";
-else if (tempMin == "20")
-	document.getElementById("tempMin").selectedIndex = "3";
-else if (tempMin == "30")
-	document.getElementById("tempMin").selectedIndex = "4";
-else if (tempMin == "40")
-	document.getElementById("tempMin").selectedIndex = "5";
-else if (tempMin == "50")
-	document.getElementById("tempMin").selectedIndex = "6";
-else if (tempMin == "60")
-	document.getElementById("tempMin").selectedIndex = "7";
-else if (tempMin == "70")
-	document.getElementById("tempMin").selectedIndex = "8";
-else if (tempMin == "80")
-	document.getElementById("tempMin").selectedIndex = "9";
-else if (tempMin == "90")
-	document.getElementById("tempMin").selectedIndex = "10";
-else if (tempMin == "100")
-	document.getElementById("tempMin").selectedIndex = "11";
+// if (tempMin == "0")
+// 	document.getElementById("tempMin").selectedIndex = "1";
+// else if (tempMin == "10")
+// 	document.getElementById("tempMin").selectedIndex = "2";
+// else if (tempMin == "20")
+// 	document.getElementById("tempMin").selectedIndex = "3";
+// else if (tempMin == "30")
+// 	document.getElementById("tempMin").selectedIndex = "4";
+// else if (tempMin == "40")
+// 	document.getElementById("tempMin").selectedIndex = "5";
+// else if (tempMin == "50")
+// 	document.getElementById("tempMin").selectedIndex = "6";
+// else if (tempMin == "60")
+// 	document.getElementById("tempMin").selectedIndex = "7";
+// else if (tempMin == "70")
+// 	document.getElementById("tempMin").selectedIndex = "8";
+// else if (tempMin == "80")
+// 	document.getElementById("tempMin").selectedIndex = "9";
+// else if (tempMin == "90")
+// 	document.getElementById("tempMin").selectedIndex = "10";
+// else if (tempMin == "100")
+// 	document.getElementById("tempMin").selectedIndex = "11";
 
 if (luxMax == "0")
 	document.getElementById("luxMax").selectedIndex = "1";
@@ -154,18 +154,16 @@ if(locations == 'Bangkok'){
      document.getElementById("locations").selectedIndex = "7";
 }
 
-if (amountofWater == "0")
+if (amountofWater == "100")
 	document.getElementById("amountofWater").selectedIndex = "1";
-else if (amountofWater == "100")
-	document.getElementById("amountofWater").selectedIndex = "2";
 else if (amountofWater == "200")
-	document.getElementById("amountofWater").selectedIndex = "3";
+	document.getElementById("amountofWater").selectedIndex = "2";
 else if (amountofWater == "300")
-	document.getElementById("amountofWater").selectedIndex = "4";
+	document.getElementById("amountofWater").selectedIndex = "3";
 else if (amountofWater == "400")
-	document.getElementById("amountofWater").selectedIndex = "5";
+	document.getElementById("amountofWater").selectedIndex = "4";
 else if (amountofWater == "500")
-	document.getElementById("amountofWater").selectedIndex = "6";
+	document.getElementById("amountofWater").selectedIndex = "5";
 
 	// var moisMax = "#{moisMax}";
  //      var luxMax = "#{moisMin}";

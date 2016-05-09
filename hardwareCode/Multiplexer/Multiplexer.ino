@@ -11,11 +11,6 @@ void setup()
 }
 void loop()
 {
-  Read_vin();
-  displaySerial();
-}
-void Read_vin()
-{
   if(c==0){b2=0,b1=0,b0=0;}
   else if(c==1){b2=0,b1=0,b0=1;}
   else if(c==2){b2=0,b1=1,b0=0;}
@@ -29,15 +24,9 @@ void Read_vin()
   digitalWrite(D7,b0);
   Vin[c]=analogRead(A0);
   c++; if(c>7)c=0;
-}
-void displaySerial()
-{
-  for(int k=0;k<=7;k++)
-  {
-    Serial.print(" Vin");
-    Serial.print(k+1);
-    Serial.print("=");
-    Serial.print(Vin[k],2);
-  }
-  Serial.println(" ");
+
+  Serial.print("Moisture = ");
+  Serial.print(Vin[1],2);
+  Serial.print("  ||  Brightness = ");
+  Serial.println(Vin[7],2);
 }
