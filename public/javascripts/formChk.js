@@ -1,25 +1,23 @@
-if (moisMax == "0")
+if (moisMax == "10")
 	document.getElementById("moisMax").selectedIndex = "1";
-else if (moisMax == "10")
-	document.getElementById("moisMax").selectedIndex = "2";
 else if (moisMax == "20")
-	document.getElementById("moisMax").selectedIndex = "3";
+	document.getElementById("moisMax").selectedIndex = "2";
 else if (moisMax == "30")
-	document.getElementById("moisMax").selectedIndex = "4";
+	document.getElementById("moisMax").selectedIndex = "3";
 else if (moisMax == "40")
-	document.getElementById("moisMax").selectedIndex = "5";
+	document.getElementById("moisMax").selectedIndex = "4";
 else if (moisMax == "50")
-	document.getElementById("moisMax").selectedIndex = "6";
+	document.getElementById("moisMax").selectedIndex = "5";
 else if (moisMax == "60")
-	document.getElementById("moisMax").selectedIndex = "7";
+	document.getElementById("moisMax").selectedIndex = "6";
 else if (moisMax == "70")
-	document.getElementById("moisMax").selectedIndex = "8";
+	document.getElementById("moisMax").selectedIndex = "7";
 else if (moisMax == "80")
-	document.getElementById("moisMax").selectedIndex = "9";
+	document.getElementById("moisMax").selectedIndex = "8";
 else if (moisMax == "90")
-	document.getElementById("moisMax").selectedIndex = "10";
+	document.getElementById("moisMax").selectedIndex = "9";
 else if (moisMax == "100")
-	document.getElementById("moisMax").selectedIndex = "11";
+	document.getElementById("moisMax").selectedIndex = "10";
 
 if (moisMin == "0")
 	document.getElementById("moisMin").selectedIndex = "1";
@@ -41,8 +39,6 @@ else if (moisMin == "80")
 	document.getElementById("moisMin").selectedIndex = "9";
 else if (moisMin == "90")
 	document.getElementById("moisMin").selectedIndex = "10";
-else if (moisMin == "100")
-	document.getElementById("moisMin").selectedIndex = "11";
 
 // if (tempMax == "0")
 // 	document.getElementById("tempMax").selectedIndex = "1";
@@ -90,28 +86,26 @@ else if (moisMin == "100")
 // else if (tempMin == "100")
 // 	document.getElementById("tempMin").selectedIndex = "11";
 
-if (luxMax == "0")
+if (luxMax == "10")
 	document.getElementById("luxMax").selectedIndex = "1";
-else if (luxMax == "10")
-	document.getElementById("luxMax").selectedIndex = "2";
 else if (luxMax == "20")
-	document.getElementById("luxMax").selectedIndex = "3";
+	document.getElementById("luxMax").selectedIndex = "2";
 else if (luxMax == "30")
-	document.getElementById("luxMax").selectedIndex = "4";
+	document.getElementById("luxMax").selectedIndex = "3";
 else if (luxMax == "40")
-	document.getElementById("luxMax").selectedIndex = "5";
+	document.getElementById("luxMax").selectedIndex = "4";
 else if (luxMax == "50")
-	document.getElementById("luxMax").selectedIndex = "6";
+	document.getElementById("luxMax").selectedIndex = "5";
 else if (luxMax == "60")
-	document.getElementById("luxMax").selectedIndex = "7";
+	document.getElementById("luxMax").selectedIndex = "6";
 else if (luxMax == "70")
-	document.getElementById("luxMax").selectedIndex = "8";
+	document.getElementById("luxMax").selectedIndex = "7";
 else if (luxMax == "80")
-	document.getElementById("luxMax").selectedIndex = "9";
+	document.getElementById("luxMax").selectedIndex = "8";
 else if (luxMax == "90")
-	document.getElementById("luxMax").selectedIndex = "10";
+	document.getElementById("luxMax").selectedIndex = "9";
 else if (luxMax == "100")
-	document.getElementById("luxMax").selectedIndex = "11";
+	document.getElementById("luxMax").selectedIndex = "10";
 
 if (luxMin == "0")
 	document.getElementById("luxMin").selectedIndex = "1";
@@ -133,25 +127,53 @@ else if (luxMin == "80")
 	document.getElementById("luxMin").selectedIndex = "9";
 else if (luxMin == "90")
 	document.getElementById("luxMin").selectedIndex = "10";
-else if (luxMin == "100")
-	document.getElementById("luxMin").selectedIndex = "11";
 
 document.getElementById("plantName").value = name;
 
-if(locations == 'Bangkok'){
+if(locations == 'Ang Thong'){
     document.getElementById("locations").selectedIndex = "1";
-}else if(locations == 'Nonthaburi'){
-    document.getElementById("locations").selectedIndex = "2";  
-}else if(locations == 'Pathum Thani'){
+}else if(locations == 'Ayutthaya'){
+    document.getElementById("locations").selectedIndex = "2";
+}else if(locations == 'Bangkok'){
     document.getElementById("locations").selectedIndex = "3";
-}else if(locations == 'Samut Prakan'){
-    document.getElementById("locations").selectedIndex = "4";  
-}else if(locations == 'Suphan Buri'){
-    document.getElementById("locations").selectedIndex = "5"; 
-}else if(locations == 'Chon Buri'){
-    document.getElementById("locations").selectedIndex = "6"; 
+}else if(locations == 'Chai nat'){
+    document.getElementById("locations").selectedIndex = "4";
+}else if(locations == 'Kamphaeng Phet'){
+    document.getElementById("locations").selectedIndex = "5";
+}else if(locations == 'Lop Buri'){
+    document.getElementById("locations").selectedIndex = "6";
+}else if(locations == 'Nakhon Nayok'){
+    document.getElementById("locations").selectedIndex = "7";
 }else if(locations == 'Nakhon Pathom'){
-     document.getElementById("locations").selectedIndex = "7";
+     document.getElementById("locations").selectedIndex = "8";
+}else if(locations == 'Nakhon Sawan'){
+     document.getElementById("locations").selectedIndex = "9";
+}else if(locations == 'Nonthaburi'){
+    document.getElementById("locations").selectedIndex = "10";  
+}else if(locations == 'Pathum Thani'){
+    document.getElementById("locations").selectedIndex = "11";
+}else if(locations == 'Phetchabun'){
+     document.getElementById("locations").selectedIndex = "12";
+}else if(locations == 'Phichit'){
+     document.getElementById("locations").selectedIndex = "13";
+}else if(locations == 'Phitsanulok'){
+     document.getElementById("locations").selectedIndex = "14";
+}else if(locations == 'Saraburi'){
+     document.getElementById("locations").selectedIndex = "15";
+}else if(locations == 'Samut Prakan'){
+    document.getElementById("locations").selectedIndex = "16";  
+}else if(locations == 'Samut Sakhon'){
+     document.getElementById("locations").selectedIndex = "17";
+}else if(locations == 'Samut Songkhram'){
+     document.getElementById("locations").selectedIndex = "18";
+}else if(locations == 'Sing Buri'){
+     document.getElementById("locations").selectedIndex = "19";
+}else if(locations == 'Sukhothai'){
+     document.getElementById("locations").selectedIndex = "20";
+}else if(locations == 'Suphan Buri'){
+    document.getElementById("locations").selectedIndex = "21"; 
+}else if(locations == 'Uthai Thani'){
+    document.getElementById("locations").selectedIndex = "22"; 
 }
 
 if (amountofWater == "100")

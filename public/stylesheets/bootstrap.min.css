@@ -1754,7 +1754,7 @@ textarea.input-lg, select[multiple].input-lg {
 }
 .btn-primary {
 	color: #fff;
-	background-color: #428bca;
+	background-color: #00796B;
 	border-color: #357ebd
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
@@ -4456,7 +4456,7 @@ button.close {
 }
 .modal-footer .btn+.btn {
 	margin-left: 5px;
-	margin-bottom: 0
+	margin-bottom: 5px;
 }
 .modal-footer .btn-group .btn+.btn {
 	margin-left: -1px
@@ -4464,7 +4464,46 @@ button.close {
 .modal-footer .btn-block+.btn-block {
 	margin-left: 0
 }
-@media (min-width:768px) {
+@media (max-width:550px) {
+.modal-dialog {
+	width: 350px;
+	margin: 30px auto
+}
+.modal-content {
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	box-shadow: 0 5px 15px rgba(0,0,0,.5)
+}
+.modal-sm {
+	width: 300px
+}
+}
+@media (min-width:550px) {
+.modal-dialog {
+	width: 500px;
+	margin: 30px auto
+}
+.modal-content {
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	box-shadow: 0 5px 15px rgba(0,0,0,.5)
+}
+.modal-sm {
+	width: 300px
+}
+}
+@media (min-width:650px) {
+.modal-dialog {
+	width: 600px;
+	margin: 30px auto
+}
+.modal-content {
+	-webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	box-shadow: 0 5px 15px rgba(0,0,0,.5)
+}
+.modal-sm {
+	width: 300px
+}
+}
+@media (min-width:1170px) {
 .modal-dialog {
 	width: 600px;
 	margin: 30px auto
@@ -5001,4 +5040,7 @@ th.visible-print, td.visible-print {
 .hidden-print {
 	display: none!important
 }
+}
+.modalRadio{
+	padding-left: 30px;
 }

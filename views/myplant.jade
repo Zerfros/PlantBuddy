@@ -107,26 +107,42 @@ html(lang='en')
                                 .col-xs-8
                                   select.form-control(id='locations', name='locations')
                                     option(disabled='disabled', selected='selected') Select your city
+                                    option Ang Thong
+                                    option Ayutthaya
                                     option Bangkok
+                                    option Chai Nat
+                                    option Kamphaeng Phet
+                                    option Lop Buri
+                                    option Nakhon Nayok
+                                    option Nakhon Pathom
+                                    option Nakhon Sawan
                                     option Nonthaburi
                                     option Pathum Thani
+                                    option Phetchabun
+                                    option Phichit
+                                    option Phitsanulok
+                                    option Saraburi
                                     option Samut Prakan
+                                    option Samut Sakhon
+                                    option Samut Songkhram
+                                    option Sing Buri
+                                    option Sukhothai
                                     option Suphan Buri
-                                    option Chon Buri
-                                    option Nakhon Pathom
-                            label.col-xs-6.control-label(style="padding-bottom:15px;")
-                              i.fa.fa-filter
-                              | &nbsp Amount of Water
-                            .col-xs-6.controls(style="padding-bottom:15px;")
-                              .row
-                                .col-xs-8
-                                  select.form-control(id='amountofWater', name='amountofWater')
-                                    option(disabled='disabled', selected='selected') Choose amount of water
-                                    option 100
-                                    option 200
-                                    option 300
-                                    option 400
-                                    option 500
+                                    option Uthai Thani
+                                    
+                            //- label.col-xs-6.control-label(style="padding-bottom:15px;")
+                            //-   i.fa.fa-filter
+                            //-   | &nbsp Amount of Water
+                            //- .col-xs-6.controls(style="padding-bottom:15px;")
+                            //-   .row
+                            //-     .col-xs-8
+                            //-       select.form-control(id='amountofWater', name='amountofWater')
+                            //-         option(disabled='disabled', selected='selected') Choose amount of water
+                            //-         option 100
+                            //-         option 200
+                            //-         option 300
+                            //-         option 400
+                            //-         option 500
                             hr
                             h3 Notification Setting
                               //- h4.col-xs-12.control-label Temparature
@@ -181,14 +197,12 @@ html(lang='en')
                                       option(value='60') 60 
                                       option(value='70') 70 
                                       option(value='80') 80 
-                                      option(value='90') 90 
-                                      option(value='100') 100 
+                                      option(value='90') 90
                                   h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
                                     label Maximum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='moisMax',name='moisMax')
                                       option(disabled='disabled', selected='selected', id='moisMaxDD') Unit : Percentage
-                                      option(value='0') 0
                                       option(value='10') 10 
                                       option(value='20') 20 
                                       option(value='30') 30 
@@ -198,7 +212,7 @@ html(lang='en')
                                       option(value='70') 70 
                                       option(value='80') 80 
                                       option(value='90') 90 
-                                      option(value='100') 100 
+                                      option(value='100') 100
                               h4.col-xs-12.control-label Lux
                               .col-sm-12.controls(style="padding-bottom:30px;")
                                 .row
@@ -207,34 +221,46 @@ html(lang='en')
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='luxMin',name='luxMin')
                                       option(disabled='disabled', selected='selected') Unit : Percentage
-                                      option 0
-                                      option 10 
-                                      option 20 
-                                      option 30 
-                                      option 40 
-                                      option 50 
-                                      option 60 
-                                      option 70 
-                                      option 80 
-                                      option 90 
-                                      option 100 
+                                      option(value='0') 0
+                                      option(value='10') 10 
+                                      option(value='20') 20 
+                                      option(value='30') 30 
+                                      option(value='40') 40 
+                                      option(value='50') 50 
+                                      option(value='60') 60 
+                                      option(value='70') 70 
+                                      option(value='80') 80 
+                                      option(value='90') 90
                                   h5.col-xs-8(style="padding:0px 0px 15px 30px;float: left;")
                                     label Maximum
                                   .col-xs-4(style="padding-bottom: 15px;")
                                     select.form-control(id='luxMax',name='luxMax')
                                       option(disabled='disabled', selected='selected') Unit : Percentage
-                                      option 0
-                                      option 10 
-                                      option 20 
-                                      option 30 
-                                      option 40 
-                                      option 50 
-                                      option 60 
-                                      option 70 
-                                      option 80 
-                                      option 90 
-                                      option 100 
-                            button.btn.btn-green.btn-block(type='submit') Apply
+                                      option(value='10') 10 
+                                      option(value='20') 20 
+                                      option(value='30') 30 
+                                      option(value='40') 40 
+                                      option(value='50') 50 
+                                      option(value='60') 60 
+                                      option(value='70') 70 
+                                      option(value='80') 80 
+                                      option(value='90') 90 
+                                      option(value='100') 100
+                            button.btn.btn-green.btn-block(type='button' data-toggle="modal" data-target="#myModal") Apply
+                            // Modal
+                            #myModal.modal.fade(role='dialog')
+                              .modal-dialog
+                                // Modal content
+                                .modal-content
+                                  .modal-header
+                                    button.close(type='button', data-dismiss='modal') ×
+                                    h4#modal.modal-title Confirm
+                                  .modal-body
+                                    p Are you sure to save now?
+                                  .modal-footer
+                                    button.btn.btn-default(type='button' data-dismiss='modal' style="margin-bottom:5px;") Close
+                                    button.btn.btn-primary(type='submit') Save changes
+
       // END CONTENT
     // END PAGE WRAPPER
     script(src='/javascripts/jquery-1.10.2.min.js')
@@ -300,4 +326,75 @@ html(lang='en')
       })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
       ga('create', 'UA-145464-12', 'auto');
       ga('send', 'pageview');
+
+    script.
+      //- $("#apply-button").on('click',function(){
+      //-   alert("Form is applied.");
+      //- })
+
+      //MOISMIN
+      $("#moisMin").on("change",function(){
+        var moisMin = parseInt($("#moisMin").val())
+        var moisMax = parseInt($("#moisMax").val())
+        //- $("#moisMax").html("<option disabled='disabled' selected='selected' id='moisMaxDD'> Unit : Percentag</option>")
+        for(var i = moisMin+10; i >= 0; i -= 10){
+          $("#moisMax option[value='"+ i +"']").hide();
+        }
+        for(var i = moisMin+10; i <= 100; i += 10){
+          $("#moisMax option[value='"+ i +"']").show();
+        }
+        if(moisMin >= $("#moisMax").val()){
+          moisMin = moisMin+10
+          $("#moisMax option[value='"+ moisMin +"']").prop('selected','selected');
+        }
+      });
+      //MOISMAX
+      $("#moisMax").on("change",function(){
+        var moisMin = parseInt($("#moisMin").val())
+        var moisMax = parseInt($("#moisMax").val())
+        //- $("#moisMax").html("<option disabled='disabled' selected='selected' id='moisMaxDD'> Unit : Percentag</option>")
+        for(var i = moisMax-10; i <= 100; i += 10){
+          $("#moisMin option[value='"+ i +"']").hide();
+        }
+        for(var i = moisMax-10; i >= 0; i -= 10){
+          $("#moisMin option[value='"+ i +"']").show();
+        }
+        if(max <= $("#moisMin").val()){
+          moisMax = moisMax-10
+          $("#moisMin option[value='"+ moisMax +"']").prop('selected','selected');
+        }
+      });
+      //LUXMIN
+      $("#luxMin").on("change",function(){
+        var luxMin = parseInt($("#luxMin").val())
+        var luxMax = parseInt($("#luxMax").val())
+        //- $("#luxMax").html("<option disabled='disabled' selected='selected' id='luxMaxDD'> Unit : Percentag</option>")
+        for(var i = luxMin+10; i >= 0; i -= 10){
+          $("#luxMax option[value='"+ i +"']").hide();
+        }
+        for(var i = luxMin+10; i <= 100; i += 10){
+          $("#luxMax option[value='"+ i +"']").show();
+        }
+        if(luxMin >= $("#luxMax").val()){
+          luxMin = luxMin+10
+          $("#luxMax option[value='"+ luxMin +"']").prop('selected','selected');
+        }
+      });
+      //LUXMAX
+      $("#luxMax").on("change",function(){
+        var luxMin = parseInt($("#luxMin").val())
+        var luxMax = parseInt($("#luxMax").val())
+        //- $("#luxMax").html("<option disabled='disabled' selected='selected' id='luxMaxDD'> Unit : Percentag</option>")
+        for(var i = luxMax-10; i <= 100; i += 10){
+          $("#luxMin option[value='"+ i +"']").hide();
+        }
+        for(var i = luxMax-10; i >= 0; i -= 10){
+          $("#luxMin option[value='"+ i +"']").show();
+        }
+        if(luxMax <= $("#luxMin").val()){
+          luxMax = luxMax-10
+          $("#luxMin option[value='"+ luxMax +"']").prop('selected','selected');
+        }
+      });
+
 

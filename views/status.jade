@@ -161,7 +161,24 @@ html(lang='en')
                               .progress-bar.progress-bar-yellow(id='test2', role='progressbar', aria-valuenow='66', aria-valuemin='0', aria-valuemax='100', style='width: 66%;')
                                 span.sr-only 66% Complete (success)
             form(action='/wateringbyUser',method='post', id="wateringbyUser")                    
-              button.btn.btn-green.btn-block(type='submit') Watering Now !
+              button.btn.btn-green.btn-block(type='button' data-toggle="modal" data-target="#myModal") Watering Now !
+              // Modal
+              #myModal.modal.fade(role='dialog')
+                .modal-dialog
+                  // Modal content
+                  .modal-content
+                    .modal-header
+                      button.close(type='button', data-dismiss='modal') ×
+                      h4#modal.modal-title Amount of water
+                    .modal-body
+                      p How much water to water plants?
+                    .modal-footer
+                      button.btn.btn-default(type='button' data-dismiss='modal' style="margin-bottom:5px;") Later
+                      button.btn.btn-primary(type='submit' ,name='amountofWater' ,value="100") 100 ml.
+                      button.btn.btn-primary(type='submit' ,name='amountofWater' ,value="200") 200 ml.
+                      button.btn.btn-primary(type='submit' ,name='amountofWater' ,value="300") 300 ml.
+                      button.btn.btn-primary(type='submit' ,name='amountofWater' ,value="400") 400 ml.
+                      button.btn.btn-primary(type='submit' ,name='amountofWater' ,value="500") 500 ml.
             // END CONTENT
           // END PAGE WRAPPER
       script(src='/javascripts/jquery-1.10.2.min.js')

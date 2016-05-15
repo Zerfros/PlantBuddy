@@ -4,26 +4,71 @@ xhttp.onreadystatechange = function() {
         getWeather(xhttp);
     }
 };
-if(locations == 'Bangkok'){
+if(locations == 'Ang Thong'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1621035&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Ayutthaya'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1607532&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Bangkok'){
     xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1609350&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
-}else if(locations == 'Nonthaburi'){
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608133&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+}else if(locations == 'Chai nat'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1611416&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Kamphaeng Phet'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1153090&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Lop Buri'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1609032&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Nakhon Nayok'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608539&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
 }else if(locations == 'Nakhon Pathom'){
     xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608534&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
+}else if(locations == 'Nakhon Sawan'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608526&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Nonthaburi'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1608133&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
 }else if(locations == 'Pathum Thani'){
     xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1620875&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Phetchabun'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1607737&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Phichit'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1607725&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Phitsanulok'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1607708&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Saraburi'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606418&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
 }else if(locations == 'Samut Prakan'){
     xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606590&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
+}else if(locations == 'Samut Sakhon'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606588&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Samut Songkhram'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606586&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Sing Buri'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606270&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
+}else if(locations == 'Sukhothai'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1150533&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+    xhttp.send();    
 }else if(locations == 'Suphan Buri'){
     xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1606033&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
-}else if(locations == 'Chon Buri'){
-    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1611110&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
+}else if(locations == 'Uthai Thani'){
+    xhttp.open("GET", "http://api.openweathermap.org/data/2.5/forecast/daily?id=1605223&APPID=1680da4be53c79801962e75fc07ea278&mode=xml", true);
     xhttp.send();    
 }
 

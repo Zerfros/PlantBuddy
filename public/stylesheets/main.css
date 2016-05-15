@@ -4065,6 +4065,9 @@ h6 {
   font-weight: 300;
   color: #eeeeee;
 }
+h4#modal {
+  color: #333333;
+}
 h4#tips {
   font-family: "TH Sarabun New";
   font-weight: 300;
@@ -4456,7 +4459,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
   outline: none !important;
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 5px !important;
 }
 .btn.btn-square {
   -webkit-border-radius: 0 !important;
@@ -4543,7 +4546,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
   border: 1px solid #594857;
   color: #594857;
 }
-.btn-default {
+/*.btn-default {
    background: #f2f5f7; /* Old browsers */
 background: -moz-linear-gradient(top, #f2f5f7 0%, #f6f8f9 50%, #d7dee3 50%, #d7dee3 50%, #d7dee3 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f7), color-stop(50%,#f6f8f9), color-stop(50%,#d7dee3), color-stop(50%,#d7dee3), color-stop(100%,#d7dee3)); /* Chrome,Safari4+ */
@@ -4556,7 +4559,7 @@ color:#58636b;
  -webkit-border-radius: 5px !important;
   -moz-border-radius: 5px !important;
   border-radius: 5px !important;
-}
+}*/
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
@@ -4591,7 +4594,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  border: 1px solid #1f68b1;
+  border: 1px solid #00796B;
   
 }
 .btn-primary:hover,
@@ -4600,7 +4603,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #1f68b1;
+  background-color: #006055;
   border-color: #1a548d;
 }
 .btn-primary:active,
@@ -5812,7 +5815,7 @@ li [class*=" icon-"].icon-large {
 .modal .modal-dialog .modal-content {
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 5px !important;
 }
 .modal .modal-dialog .modal-content .modal-header.modal-header-primary {
   background: #dc6767;

@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
   //     alert("Done");
   // });
   //alert("sometext");
-  client.publish('plantbuddy/water', req.body.amountofWater);
+  // client.publish('plantbuddy/water', req.body.amountofWater);
   client.publish('plantbuddy/lowMoisture', req.body.moisMin);
   client.publish('plantbuddy/lowLux', req.body.luxMin);
   res.redirect('/myplant');

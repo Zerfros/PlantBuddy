@@ -64,44 +64,61 @@ void pulseCounter()
   pulseCount++;
 }
 
-void waterbyUser(){
+void waterbyUser(int aoW){
   //water flow sensor
 //  int timeout = 0;
-  while (totalMilliLitres<max){
-    Serial.println("Watering by User");
-    digitalWrite(solenoidPin, HIGH);
-    detachInterrupt(sensorInterrupt);
-    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / calibrationFactor;
-    oldTime = millis();
-    flowMilliLitres = (flowRate / 60) * 1000;
-    totalMilliLitres += flowMilliLitres;
-    unsigned int frac;
-    Serial.print("Flow rate: ");
-    Serial.print(int(flowRate));  // Print the integer part of the variable
-    Serial.print(".");             // Print the decimal point
-    frac = (flowRate - int(flowRate)) * 10;
-    Serial.print(frac, DEC) ;      // Print the fractional part of the variable
-    Serial.print("L/min");
-    Serial.print("  Current Liquid Flowing: ");             // Output separator
-    Serial.print(flowMilliLitres);
-    Serial.print("mL/Sec");
-    Serial.print("  Output Liquid Quantity: ");             // Output separator
-    Serial.print(totalMilliLitres);
-    Serial.println("mL");
-    pulseCount = 0;
-    attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
-    delay(2000);
+//  while (totalMilliLitres<max){
+//    Serial.println("Watering by User");
+//    digitalWrite(solenoidPin, HIGH);
+//    detachInterrupt(sensorInterrupt);
+//    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / calibrationFactor;
+//    oldTime = millis();
+//    flowMilliLitres = (flowRate / 60) * 1000;
+//    totalMilliLitres += flowMilliLitres;
+//    unsigned int frac;
+//    Serial.print("Flow rate: ");
+//    Serial.print(int(flowRate));  // Print the integer part of the variable
+//    Serial.print(".");             // Print the decimal point
+//    frac = (flowRate - int(flowRate)) * 10;
+//    Serial.print(frac, DEC) ;      // Print the fractional part of the variable
+//    Serial.print("L/min");
+//    Serial.print("  Current Liquid Flowing: ");             // Output separator
+//    Serial.print(flowMilliLitres);
+//    Serial.print("mL/Sec");
+//    Serial.print("  Output Liquid Quantity: ");             // Output separator
+//    Serial.print(totalMilliLitres);
+//    Serial.println("mL");
+//    pulseCount = 0;
+//    attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
+//    delay(2000);
 //    timeout++;
 //    if (timeout > 30){
 //      client.publish(outSystemNotify, "notEnoughWater");
 //      break;
 //    }
+//  }
+//  digitalWrite(solenoidPin, LOW);
+//  wateringbyUser = 0;
+//  totalMilliLitres= 0 ;
+//  client.publish(outSystemNotify, "wateredbyUser");
+//  Serial.println("totalMilliLitres has reset");
+  digitalWrite(solenoidPin, HIGH);
+  if (aoW == 100){
+    delay(10000);
+    digitalWrite(solenoidPin, LOW);
+  }else if (aoW == 200){
+    delay(20000);
+    digitalWrite(solenoidPin, LOW);
+  }else if (aoW == 300){
+    delay(30000);
+    digitalWrite(solenoidPin, LOW);
+  }else if (aoW == 400){
+    delay(40000);
+    digitalWrite(solenoidPin, LOW);
+  }else if (aoW == 500){
+    delay(50000);
+    digitalWrite(solenoidPin, LOW);
   }
-  digitalWrite(solenoidPin, LOW);
-  wateringbyUser = 0;
-  totalMilliLitres= 0 ;
-  client.publish(outSystemNotify, "wateredbyUser");
-  Serial.println("totalMilliLitres has reset");
 }
 
 //Amount of Water
@@ -119,23 +136,24 @@ void callback(char* topic, byte* payload, unsigned int length) {
     String amountofWater(message_water);
     Serial.println(amountofWater);
     if (amountofWater == "100"){
-      max = 100;
       Serial.println("amountofWater==>100ml");
+      waterbyUser(100);
     }else if (amountofWater == "200"){
-      max = 200;
       Serial.println("amountofWater==>200ml");
+      waterbyUser(200);
     }else if (amountofWater == "300"){
-      max = 300;
       Serial.println("amountofWater==>300ml");
+      waterbyUser(300);
     }else if (amountofWater == "400"){
-      max = 400;
       Serial.println("amountofWater==>400ml");
+      waterbyUser(400);
     }else if (amountofWater == "500"){
-      max = 500;
       Serial.println("amountofWater==>500ml");
-    }else if (amountofWater == "wateringbyUser"){
-      waterbyUser();
+      waterbyUser(500);
     }
+//    }else if (amountofWater == "wateringbyUser"){
+//      waterbyUser();
+//    }
     for (i=0; i < length; i++) {
       message_water[i] = '\0';
     }
@@ -385,7 +403,7 @@ void loop() {
   //Solenoid
   if (Vin[0] > lowMoisture){
       digitalWrite(solenoidPin, HIGH);
-//      client.publish(outSystemNotify, "ledOFF");
+      //client.publish(outSystemNotify, "ledOFF");
       Serial.println("Watering");
       watering = 1;
    } else if(Vin[0] <= lowMoisture && watering == 1 && wateringbyUser == 0){
@@ -394,8 +412,7 @@ void loop() {
       client.publish(outSystemNotify, "Watered");
       watering = 0;
    }
-    // Check if Time out
-
+   // Check if Time out
   client.loop();
 }
 

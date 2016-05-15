@@ -231,6 +231,16 @@ client.on('message', function(topic, message){
 						console.log("Watered by User");
 					}
 				})
+			}else if (message.toString() == "notEnoughWater") {
+				var date = new Date();
+				var saveData = new notificationDB({process: 'Not enough water', time: (date.toISOString())});
+				saveData.save(function(err){
+					if (err){
+						return err;
+					}else{
+						console.log("Not enough water");
+					}
+				})
 			};
 		}else{}
 	})
