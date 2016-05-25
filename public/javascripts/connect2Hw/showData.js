@@ -1,19 +1,19 @@
-var MQTTbroker = 'broker.mqttdashboard.com';
-var MQTTport = 8000;
+var MQTTbroker = 'neutron.it.kmitl.ac.th';
+var MQTTport = 1884;
 var MQTTsubMoisture = 'plantbuddy/moisture'; 
 var MQTTsubBrightness = 'plantbuddy/brightness';
 
-var chart; // global variuable for chart
+var chart; // global variable for chart
 var dataTopics = new Array();
 
-var client = new Paho.MQTT.Client(MQTTbroker, MQTTport, '/ws' ,"clientId-receive");
+var client = new Paho.MQTT.Client(MQTTbroker, MQTTport, "receiver");
 client.onMessageArrived = onMessageArrived;
 client.onConnectionLost = onConnectionLost;
 
 var options = {
-	useSSL: false,
-	userName: "plantbuddy",
-	password: "taenshiki",
+	// useSSL: false,
+	// userName: "plantbuddy",
+	// password: "taenshiki",
 	onSuccess: function () {
 		console.log("mqtt connected");
 		client.subscribe(MQTTsubMoisture);
@@ -23,11 +23,13 @@ var options = {
 		console.log("Connection failed, ERROR: " + message.errorMessage);
 	}
 };
+
 function onConnectionLost(responseObject) {
 	console.log("connection lost: " + responseObject.errorMessage);
 };
 function onMessageArrived(message) {
 	if (message.destinationName == "plantbuddy/moisture"){
+		console.log("received");
 		console.log(message.destinationName, '',message.payloadString);
 		document.getElementById("moistureData").innerHTML = message.payloadString;
 		if(message)

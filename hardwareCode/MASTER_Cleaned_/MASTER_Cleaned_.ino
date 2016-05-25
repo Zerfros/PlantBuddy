@@ -8,7 +8,9 @@
 #include <WiFiManager.h>  
 
 //connect broker
-char MQTT_SERVER[]="broker.mqttdashboard.com";
+//char MQTT_SERVER[]="broker.mqttdashboard.com";
+char MQTT_SERVER[]="neutron.it.kmitl.ac.th";
+
 char* outMoisture = "plantbuddy/moisture";
 char* outSystemNotify = "plantbuddy/systemNotify";
 char* outBrightness = "plantbuddy/brightness";
@@ -23,7 +25,6 @@ WiFiClient espClient;
 PubSubClient client(MQTT_SERVER, 1883, 0, espClient);
 
 //choose amount of water
-int wateringbyUser = 0;
 int max = 100;
 char message_water[100];
 char message_lowMoisture[100];
@@ -31,8 +32,8 @@ char message_lowLux[100];
 
 //Lamp
 const int lampPin = D4;
-unsigned long timer;
-int lowLux = 102;
+unsigned long timerLamp;
+int lowLux = 307;
 
 //water flow sensor
 byte sensorInterrupt = D6;
@@ -57,74 +58,15 @@ int brightness = 0;
 const int solenoidPin = D3;
 int lowMoisture = 921;
 int watering = 0;
+int wateringbyuser = 0;
+unsigned long timerWater = 0;
+int waterMillis = millis();
+int aoW = 0;
 
 //water flow sensor
 void pulseCounter()
 {
   pulseCount++;
-}
-
-void waterbyUser(int aoW, int moisOld){
-  digitalWrite(solenoidPin, HIGH);
-  if (aoW == 100){
-    delay(10000);
-    digitalWrite(solenoidPin, LOW);
-    digitalWrite(D9,0);
-    digitalWrite(D8,0);
-    digitalWrite(D7,0);
-    Vin[0]=analogRead(A0);
-    if (Vin[0] >= moisOld-20 && Vin[0] > 350){
-      client.publish(outSystemNotify, "notEnoughWater");
-      Serial.println("Not enough Water");
-    }
-  }else if (aoW == 200){
-    delay(20000);
-    digitalWrite(solenoidPin, LOW);
-    digitalWrite(D9,0);
-    digitalWrite(D8,0);
-    digitalWrite(D7,0);
-    Vin[0]=analogRead(A0);
-    if (Vin[0] >= moisOld-20 && Vin[0] > 350){
-      client.publish(outSystemNotify, "notEnoughWater");
-      Serial.println("Not enough Water");
-    }
-  }else if (aoW == 300){
-    delay(30000);
-    digitalWrite(solenoidPin, LOW);
-    digitalWrite(D9,0);
-    digitalWrite(D8,0);
-    digitalWrite(D7,0);
-    Vin[0]=analogRead(A0);
-    Serial.print(Vin[0]);
-    Serial.println(moisOld);
-    if (Vin[0] >= moisOld-20 && Vin[0] > 350){
-      client.publish(outSystemNotify, "notEnoughWater");
-      Serial.println("Not enough Water");
-    }
-  }else if (aoW == 400){
-    delay(40000);
-    digitalWrite(solenoidPin, LOW);
-    digitalWrite(D9,0);
-    digitalWrite(D8,0);
-    digitalWrite(D7,0);
-    Vin[0]=analogRead(A0);
-    if (Vin[0] >= moisOld-20 && Vin[0] > 350){
-      client.publish(outSystemNotify, "notEnoughWater");
-      Serial.println("Not enough Water");
-    }
-  }else if (aoW == 500){
-    delay(50000);
-    digitalWrite(solenoidPin, LOW);
-    digitalWrite(D9,0);
-    digitalWrite(D8,0);
-    digitalWrite(D7,0);
-    Vin[0]=analogRead(A0);
-    if (Vin[0] >= moisOld-20 && Vin[0] > 350){
-      client.publish(outSystemNotify, "notEnoughWater");
-      Serial.println("Not enough Water");
-    }
-  }
-  client.publish(outSystemNotify, "wateredbyUser");
 }
 
 //Amount of Water
@@ -142,20 +84,50 @@ void callback(char* topic, byte* payload, unsigned int length) {
     String amountofWater(message_water);
     Serial.println(amountofWater);
     if (amountofWater == "100"){
-      Serial.println("amountofWater==>100ml");
-      waterbyUser(100, Vin[0]);
+      if (!wateringbyuser){
+          Serial.println("amountofWater==>100ml");
+          if (!watering){
+            wateringbyuser = 1;
+            timerWater = millis();
+            aoW = 100;
+          }
+      }
     }else if (amountofWater == "200"){
-      Serial.println("amountofWater==>200ml");
-      waterbyUser(200, Vin[0]);
+      if (!wateringbyuser){
+        if (!watering){
+          Serial.println("amountofWater==>200ml");
+          wateringbyuser = 1;
+          timerWater = millis();
+          aoW = 200;
+        }
+      }
     }else if (amountofWater == "300"){
-      Serial.println("amountofWater==>300ml");
-      waterbyUser(300, Vin[0]);
+      if (!wateringbyuser){
+          Serial.println("amountofWater==>300ml");
+          if (!watering){
+            wateringbyuser = 1;
+            timerWater = millis();
+            aoW = 300;
+          }
+      }
     }else if (amountofWater == "400"){
-      Serial.println("amountofWater==>400ml");
-      waterbyUser(400, Vin[0]);
+      if (!wateringbyuser){
+          Serial.println("amountofWater==>400ml");
+          if (!watering){
+            wateringbyuser = 1;
+            timerWater = millis();
+            aoW = 400;
+          }
+      }
     }else if (amountofWater == "500"){
-      Serial.println("amountofWater==>500ml");
-      waterbyUser(500, Vin[0]);
+      if (!wateringbyuser){
+          Serial.println("amountofWater==>500ml");
+          if (!watering){
+            wateringbyuser = 1;
+            timerWater = millis();
+            aoW = 500;
+          }
+      }
     }
     for (i=0; i < length; i++) {
       message_water[i] = '\0';
@@ -173,31 +145,31 @@ void callback(char* topic, byte* payload, unsigned int length) {
     String strLowMoisture(message_lowMoisture);
     Serial.println(strLowMoisture);
     if (strLowMoisture == "10"){
-      lowMoisture = 250 + 77;
+      lowMoisture = 250 + 696;
       Serial.println("lowMoisture==>10%");
     }else if (strLowMoisture == "20"){
-      lowMoisture = 250 + 154;
+      lowMoisture = 250 + 619;
       Serial.println("lowMoisture==>20%");
     }else if (strLowMoisture == "30"){
-      lowMoisture = 250 + 232;
+      lowMoisture = 250 + 541;
       Serial.println("lowMoisture==>30%");
     }else if (strLowMoisture == "40"){
-      lowMoisture = 250 + 309;
+      lowMoisture = 250 + 464;
       Serial.println("lowMoisture==>40%");
     }else if (strLowMoisture == "50"){
       lowMoisture = 250 + 387;
       Serial.println("lowMoisture==>50%");
     }else if (strLowMoisture == "60"){
-      lowMoisture = 250 + 464;
+      lowMoisture = 250 + 309;
       Serial.println("lowMoisture==>60%");
     }else if (strLowMoisture == "70"){
-      lowMoisture = 250 + 541;
+      lowMoisture = 250 + 232;
       Serial.println("lowMoisture==>70%");
     }else if (strLowMoisture == "80"){
-      lowMoisture = 250 + 619;
+      lowMoisture = 250 + 154;
       Serial.println("lowMoisture==>80%");
     }else if (strLowMoisture == "90"){
-      lowMoisture = 250 + 696;
+      lowMoisture = 250 + 77;
       Serial.println("lowMoisture==>90%");
     }
     for (i=0; i < length; i++) {
@@ -254,7 +226,8 @@ void setup() {
   WiFiManager wifiManager;
   wifiManager.setCustomHeadElement("<style>html{background: #333333;} h1,h3{color:#2AEC9D;text-align:center;} button{color:#FFF;background-color:#00796B;} a,span,div{color:#FFF;}</style>");
   wifiManager.startConfigPortal("PlantBuddy");
-
+//  WiFi.begin("Potae's iPhone", "Supasit19");
+  
   //connect broker
   Serial.println("Net begin");
   if (client.connect(clientId,user,pass)) { 
@@ -281,7 +254,7 @@ void setup() {
 
   //Lamp
   pinMode(lampPin, OUTPUT);
-  timer = 0;
+  timerLamp = 0;
 
   //Solenoid
   pinMode(solenoidPin, OUTPUT);
@@ -308,6 +281,15 @@ void loop() {
     c=6;
   else if(c==6)
     c=0;
+//  Serial.println(Vin[0]);
+//  Serial.println(Vin[1]);
+//  Serial.println(Vin[2]);
+//  Serial.println(Vin[3]);
+//  Serial.println(Vin[4]);
+//  Serial.println(Vin[5]);
+//  Serial.println(Vin[6]);
+//  Serial.println(Vin[7]);
+//  Serial.println(A0);
   char moistureChar [4];
   moisture = map(Vin[0], 300, 1023, 100, 0);
   sprintf(moistureChar , "%d" , moisture);
@@ -322,7 +304,8 @@ void loop() {
   Serial.println(Vin[6]);
 
   //Lamp
-  if((millis() - timer) > 5000){
+  int lampMillis = millis();
+  if((lampMillis - timerLamp) > 2500){
     //Check Status
    Serial.print("lowLux = ");
    Serial.println(lowLux);
@@ -337,7 +320,7 @@ void loop() {
       client.publish(outSystemNotify, "ledON");
       Serial.println("LED ON");
     }
-    timer = millis();
+    timerLamp = millis();
   }
 
   //Solenoid
@@ -346,11 +329,53 @@ void loop() {
       //client.publish(outSystemNotify, "ledOFF");
       Serial.println("Watering");
       watering = 1;
-   } else if(Vin[0] <= lowMoisture && watering == 1 && wateringbyUser == 0){
+   } else if(Vin[0] <= lowMoisture && watering == 1 && wateringbyuser == 0){
       digitalWrite(solenoidPin, LOW);
       Serial.println("Watered");
       client.publish(outSystemNotify, "Watered");
       watering = 0;
    }
+
+   if (wateringbyuser){
+      waterMillis = millis();
+      digitalWrite(solenoidPin, HIGH);
+      if (aoW == 100){
+        if ((waterMillis-timerWater)>10000){
+          digitalWrite(solenoidPin, LOW);
+          client.publish(outSystemNotify, "wateredbyUser");
+          timerWater = millis();
+          wateringbyuser = 0;
+        }
+      }else if (aoW == 200){
+        if ((waterMillis-timerWater)>20000){
+          digitalWrite(solenoidPin, LOW);
+          client.publish(outSystemNotify, "wateredbyUser");
+          timerWater = millis();
+          wateringbyuser = 0;
+        }
+      }else if (aoW == 300){
+        if ((waterMillis-timerWater)>30000){
+          digitalWrite(solenoidPin, LOW);
+          client.publish(outSystemNotify, "wateredbyUser");
+          timerWater = millis();
+          wateringbyuser = 0;
+        }
+      }else if (aoW == 400){
+        if ((waterMillis-timerWater)>40000){
+          digitalWrite(solenoidPin, LOW);
+          client.publish(outSystemNotify, "wateredbyUser");
+          timerWater = millis();
+          wateringbyuser = 0;
+        }
+      }else if (aoW == 500){
+        if ((waterMillis-timerWater)>50000){
+          digitalWrite(solenoidPin, LOW);
+          client.publish(outSystemNotify, "wateredbyUser");
+          timerWater = millis();
+          wateringbyuser = 0;
+        }
+      }
+   }
+  delay(500);
   client.loop();
 }

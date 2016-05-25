@@ -91,7 +91,7 @@ function getWeather(xml) {
     var id = xmlDoc.getElementsByTagName('symbol')[0];
     var idWeather = id.getAttribute("number");
     idWeather = parseInt(idWeather);
-    console.log("test");
+    
     if (idWeather < 300 && idWeather >= 200) {
         document.getElementById("img-weather").src = "images/weather/thunderstorm.png";
     } else if (idWeather < 400 && idWeather >= 300) {
